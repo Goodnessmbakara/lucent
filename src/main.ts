@@ -58,7 +58,6 @@ function initializeApp() {
   });
 
   // Add scroll event for navigation background
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     const nav = document.querySelector('.navigation') as HTMLElement;
@@ -70,8 +69,6 @@ function initializeApp() {
         nav.style.background = 'rgba(10, 14, 39, 0.8)';
       }
     }
-
-    lastScroll = currentScroll;
   });
 
   console.log('🌟 Lucent landing page initialized');

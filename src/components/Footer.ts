@@ -111,12 +111,13 @@ export function createFooter(): HTMLElement {
     gap: var(--space-4);
   `;
 
-  const copyright = document.createElement('p');
+  const copyright = document.createElement('div');
   copyright.style.cssText = `
     font-size: var(--font-size-sm);
     color: var(--color-text-tertiary);
   `;
-  copyright.textContent = `© ${new Date().getFullYear()} Lucent. All rights reserved.`;
+
+  copyright.innerHTML = 'Contact: <a href="mailto:mbakaragoodness2003@gmail.com" style="color: var(--color-text-secondary); text-decoration: none; transition: color var(--transition-base);" onmouseenter="this.style.color=\'var(--color-gold)\'" onmouseleave="this.style.color=\'var(--color-text-secondary)\'">mbakaragoodness2003@gmail.com</a>';
 
   // Social links
   const socialLinks = document.createElement('div');
