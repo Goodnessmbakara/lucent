@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucent Logo Concepts - Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: #0A0E27;
+        }
+
+        .intro {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        .concept-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .concept-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0A0E27;
+            margin-bottom: 12px;
+        }
+
+        .concept-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .variations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .variation-card {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.2s;
+        }
+
+        .variation-card:hover {
+            border-color: #FFB84D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,184,77,0.2);
+        }
+
+        .variation-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A0E27;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-preview {
+            background: white;
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            margin-bottom: 16px;
+        }
+
+        .logo-preview.dark {
+            background: #0A0E27;
+        }
+
+        .logo-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .variation-info {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #FFB84D;
+            color: #0A0E27;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #F5A82B;
+            transform: translateY(-1px);
+        }
+
+        .notes {
+            background: #FFF8E6;
+            border-left: 4px solid #FFB84D;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 32px;
+        }
+
+        .notes h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #0A0E27;
+        }
+
+        .notes p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .variations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Lucent Logo Concepts</h1>
+        <p class="intro">
+            Professional logo variations for Lucent transaction preview platform.
+            Click on each logo to see details. Right-click to download SVG files.
+        </p>
+
+        <!-- Concept 2: Lucent Monogram -->
+        <div class="concept-section">
+            <h2 class="concept-title">Concept 2: Lucent Monogram</h2>
+            <p class="concept-description">
+                <strong>Design Philosophy:</strong> Interlocking L+C forming an eye/lens aperture with hexagonal center.
+                Sophisticated, minimal, and highly versatile. Perfect for app icons with 1:1 ratio.
+            </p>
+
+            <div class="variations-grid">
+                <div class="variation-card">
+                    <div class="variation-name">Full Lockup - Light</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-2-monogram/monogram-full-light.svg" alt="Monogram Full Light">
+                    </div>
+                    <div class="variation-info">
+                        Complete logo with wordmark and tagline. Navy primary color with gold accent.
+                    </div>
+                    <a href="public/logos/concept-2-monogram/monogram-full-light.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">Full Lockup - Dark</div>
+                    <div class="logo-preview dark">
+                        <img src="public/logos/concept-2-monogram/monogram-full-dark.svg" alt="Monogram Full Dark">
+                    </div>
+                    <div class="variation-info">
+                        Dark background version with white mark and glowing gold center.
+                    </div>
+                    <a href="public/logos/concept-2-monogram/monogram-full-dark.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">Icon Only</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-2-monogram/monogram-icon-only.svg" alt="Monogram Icon">
+                    </div>
+                    <div class="variation-info">
+                        Perfect square format (200x200px) ideal for app icons, favicons, and social media avatars.
+                    </div>
+                    <a href="public/logos/concept-2-monogram/monogram-icon-only.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">Minimal</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-2-monogram/monogram-minimal.svg" alt="Monogram Minimal">
+                    </div>
+                    <div class="variation-info">
+                        No border, just pure letterforms with simplified circular center.
+                    </div>
+                    <a href="public/logos/concept-2-monogram/monogram-minimal.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">Monochrome</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-2-monogram/monogram-monochrome.svg" alt="Monogram Monochrome">
+                    </div>
+                    <div class="variation-info">
+                        Single color version perfect for print, embossing, and black & white applications.
+                    </div>
+                    <a href="public/logos/concept-2-monogram/monogram-monochrome.svg" download class="download-btn">Download SVG</a>
+                </div>
+            </div>
+
+            <div class="notes">
+                <h3>📌 Best Use Cases</h3>
+                <p>
+                    <strong>Icon Only:</strong> App icons, browser extension icon, favicon<br>
+                    <strong>Full Lockup:</strong> Website header, marketing materials, presentations<br>
+                    <strong>Monochrome:</strong> Legal documents, embossed merchandise, stamps
+                </p>
+            </div>
+        </div>
+
+        <!-- Concept 4: Typographic Illumination -->
+        <div class="concept-section">
+            <h2 class="concept-title">Concept 4: Typographic Illumination</h2>
+            <p class="concept-description">
+                <strong>Design Philosophy:</strong> Pure typographic confidence with the "U" opened to create a glowing arc.
+                Modern, confident, and highly legible. The opening represents portal/illumination.
+            </p>
+
+            <div class="variations-grid">
+                <div class="variation-card">
+                    <div class="variation-name">Standard - Light</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-4-typographic/typographic-standard-light.svg" alt="Typographic Standard Light">
+                    </div>
+                    <div class="variation-info">
+                        Full wordmark with opened U and glowing gold arc. Includes tagline with blue accent dot.
+                    </div>
+                    <a href="public/logos/concept-4-typographic/typographic-standard-light.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">Standard - Dark</div>
+                    <div class="logo-preview dark">
+                        <img src="public/logos/concept-4-typographic/typographic-standard-dark.svg" alt="Typographic Standard Dark">
+                    </div>
+                    <div class="variation-info">
+                        Enhanced glow effect on dark background. White wordmark with prominent gold illumination.
+                    </div>
+                    <a href="public/logos/concept-4-typographic/typographic-standard-dark.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">Compact</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-4-typographic/typographic-compact.svg" alt="Typographic Compact">
+                    </div>
+                    <div class="variation-info">
+                        Tighter letter spacing for space-constrained applications. Maintains glow effect.
+                    </div>
+                    <a href="public/logos/concept-4-typographic/typographic-compact.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">With Underline</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-4-typographic/typographic-underline.svg" alt="Typographic Underline">
+                    </div>
+                    <div class="variation-info">
+                        Alternative treatment with gold arc underlining the U. More subtle approach.
+                    </div>
+                    <a href="public/logos/concept-4-typographic/typographic-underline.svg" download class="download-btn">Download SVG</a>
+                </div>
+
+                <div class="variation-card">
+                    <div class="variation-name">With Accent Dot</div>
+                    <div class="logo-preview">
+                        <img src="public/logos/concept-4-typographic/typographic-with-dot.svg" alt="Typographic With Dot">
+                    </div>
+                    <div class="variation-info">
+                        Blue accent dot adds emphasis and visual interest. Balanced composition.
+                    </div>
+                    <a href="public/logos/concept-4-typographic/typographic-with-dot.svg" download class="download-btn">Download SVG</a>
+                </div>
+            </div>
+
+            <div class="notes">
+                <h3>📌 Best Use Cases</h3>
+                <p>
+                    <strong>Standard:</strong> Website headers, documentation, email signatures<br>
+                    <strong>Compact:</strong> Navigation bars, mobile headers, tight spaces<br>
+                    <strong>With Dot:</strong> Marketing materials where additional visual interest is needed
+                </p>
+            </div>
+        </div>
+
+        <div class="notes" style="margin-top: 60px;">
+            <h3>🎯 How to Export as PNG/JPG</h3>
+            <p>
+                <strong>Method 1:</strong> Open each SVG in your browser, take a screenshot, and crop<br>
+                <strong>Method 2:</strong> Open SVG in design tool (Figma, Illustrator, Inkscape) and export as PNG<br>
+                <strong>Method 3:</strong> Use online converter like CloudConvert or SVGtoPNG.com<br>
+                <strong>Recommended Export Sizes:</strong> 512x512px (icons), 1200x400px (headers), 2400x800px (high-res)
+            </p>
+        </div>
+    </div>
+</body>
+</html>
