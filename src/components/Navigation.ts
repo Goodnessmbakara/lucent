@@ -52,8 +52,8 @@ export function createNavigation(): HTMLElement {
   logoIcon.src = '/logos/lucent/icon-dark.svg';
   logoIcon.alt = 'Lucent';
   logoIcon.style.cssText = `
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: block;
   `;
 

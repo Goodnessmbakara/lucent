@@ -1,5 +1,3 @@
-import { createSimpleLogo } from './Logo';
-
 export function createFooter(): HTMLElement {
   const footer = document.createElement('footer');
   footer.style.cssText = `
@@ -34,8 +32,36 @@ export function createFooter(): HTMLElement {
 
   // Brand section
   const brandSection = document.createElement('div');
-  const logo = createSimpleLogo({ size: 'sm' });
-  logo.style.marginBottom = 'var(--space-3)';
+
+  // Logo with icon + text
+  const logoContainer = document.createElement('div');
+  logoContainer.style.cssText = `
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--space-3);
+  `;
+
+  const logoIcon = document.createElement('img');
+  logoIcon.src = '/logos/lucent/icon-dark.svg';
+  logoIcon.alt = 'Lucent';
+  logoIcon.style.cssText = `
+    width: 32px;
+    height: 32px;
+    display: block;
+  `;
+
+  const logoText = document.createElement('span');
+  logoText.textContent = 'Lucent';
+  logoText.style.cssText = `
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  `;
+
+  logoContainer.appendChild(logoIcon);
+  logoContainer.appendChild(logoText);
 
   const brandDescription = document.createElement('p');
   brandDescription.textContent = 'Transaction preview and security warnings for the Stacks blockchain. Built with ❤️ for the Stacks community.';
@@ -46,7 +72,7 @@ export function createFooter(): HTMLElement {
     max-width: 300px;
   `;
 
-  brandSection.appendChild(logo);
+  brandSection.appendChild(logoContainer);
   brandSection.appendChild(brandDescription);
 
   // Links sections
