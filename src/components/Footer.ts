@@ -11,24 +11,13 @@ export function createFooter(): HTMLElement {
   // Main footer content
   const mainContent = document.createElement('div');
   mainContent.style.cssText = `
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+    gap: var(--space-8);
   `;
-
-  const updateMainGrid = () => {
-    if (window.innerWidth >= 768) {
-      mainContent.style.gridTemplateColumns = 'repeat(2, 1fr)';
-    } else {
-      mainContent.style.gridTemplateColumns = '1fr';
-    }
-    if (window.innerWidth >= 1024) {
-      mainContent.style.gridTemplateColumns = '2fr 1fr 1fr 1fr';
-    }
-  };
-  updateMainGrid();
-  window.addEventListener('resize', updateMainGrid);
 
   // Brand section
   const brandSection = document.createElement('div');
@@ -64,92 +53,51 @@ export function createFooter(): HTMLElement {
   logoContainer.appendChild(logoText);
 
   const brandDescription = document.createElement('p');
-  brandDescription.textContent = 'Transaction preview and security warnings for the Stacks blockchain. Built with ❤️ for the Stacks community.';
+  brandDescription.textContent = 'Preview Stacks transactions before you sign.';
   brandDescription.style.cssText = `
     font-size: var(--font-size-sm);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-tertiary);
-    max-width: 300px;
+    max-width: 280px;
   `;
 
   brandSection.appendChild(logoContainer);
   brandSection.appendChild(brandDescription);
 
-  // Links sections
-  const linkSections = [
-    {
-      title: 'Product',
-      links: [
-        { text: 'Features', href: '#features' },
-        { text: 'How It Works', href: '#how-it-works' },
-        { text: 'Pricing', href: '#pricing' },
-        { text: 'Changelog', href: '#changelog' }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { text: 'Documentation', href: '#docs' },
-        { text: 'GitHub', href: 'https://github.com' },
-        { text: 'API Reference', href: '#api' },
-        { text: 'Support', href: '#support' }
-      ]
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#about' },
-        { text: 'Blog', href: '#blog' },
-        { text: 'Privacy', href: '#privacy' },
-        { text: 'Terms', href: '#terms' }
-      ]
-    }
+  // Simple links
+  const linksSection = document.createElement('div');
+  linksSection.style.cssText = `
+    display: flex;
+    gap: var(--space-6);
+  `;
+
+  const links = [
+    { text: 'Features', href: '#features' },
+    { text: 'How It Works', href: '#how-it-works' },
+    { text: 'GitHub', href: 'https://github.com/Goodnessmbakara/lucent', external: true }
   ];
 
-  linkSections.forEach(section => {
-    const sectionDiv = document.createElement('div');
-
-    const title = document.createElement('h3');
-    title.textContent = section.title;
-    title.style.cssText = `
+  links.forEach(link => {
+    const a = document.createElement('a');
+    a.href = link.href;
+    a.textContent = link.text;
+    if (link.external) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+    a.style.cssText = `
       font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-3);
+      color: var(--color-text-tertiary);
+      text-decoration: none;
+      transition: color var(--transition-base);
     `;
-
-    const linksList = document.createElement('ul');
-    linksList.style.cssText = `
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    `;
-
-    section.links.forEach(link => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = link.href;
-      a.textContent = link.text;
-      a.style.cssText = `
-        font-size: var(--font-size-sm);
-        color: var(--color-text-tertiary);
-        text-decoration: none;
-        transition: color var(--transition-base);
-      `;
-      a.onmouseenter = () => a.style.color = 'var(--color-text-primary)';
-      a.onmouseleave = () => a.style.color = 'var(--color-text-tertiary)';
-
-      li.appendChild(a);
-      linksList.appendChild(li);
-    });
-
-    sectionDiv.appendChild(title);
-    sectionDiv.appendChild(linksList);
-    mainContent.appendChild(sectionDiv);
+    a.onmouseenter = () => a.style.color = 'var(--color-text-primary)';
+    a.onmouseleave = () => a.style.color = 'var(--color-text-tertiary)';
+    linksSection.appendChild(a);
   });
 
-  mainContent.insertBefore(brandSection, mainContent.firstChild);
+  mainContent.appendChild(brandSection);
+  mainContent.appendChild(linksSection);
 
   // Bottom section
   const bottomSection = document.createElement('div');
