@@ -214,49 +214,10 @@ export function createHero(): HTMLElement {
   ctaContainer.appendChild(primaryButton);
   ctaContainer.appendChild(secondaryButton);
 
-  // Trust Indicators
-  const trustIndicators = document.createElement('div');
-  trustIndicators.style.cssText = `
-    display: flex;
-    gap: var(--space-6);
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  `;
-
-  const indicators = [
-    { icon: '🔒', text: 'End-to-End Encrypted' },
-    { icon: '⚡', text: 'Real-Time Analysis' },
-    { icon: '🛡️', text: 'Phishing Protection' }
-  ];
-
-  indicators.forEach(item => {
-    const indicator = document.createElement('div');
-    indicator.style.cssText = `
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      font-size: var(--font-size-sm);
-      color: var(--color-text-tertiary);
-    `;
-
-    const icon = document.createElement('span');
-    icon.textContent = item.icon;
-    icon.style.fontSize = 'var(--font-size-base)';
-
-    const text = document.createElement('span');
-    text.textContent = item.text;
-
-    indicator.appendChild(icon);
-    indicator.appendChild(text);
-    trustIndicators.appendChild(indicator);
-  });
-
   container.appendChild(indicator);
   container.appendChild(heading);
   container.appendChild(subtitle);
   container.appendChild(ctaContainer);
-  container.appendChild(trustIndicators);
 
   hero.appendChild(container);
 
