@@ -1,35 +1,22 @@
 export function createFooter(): HTMLElement {
   const footer = document.createElement('footer');
   footer.style.cssText = `
-    background: #000000;
     position: relative;
     overflow: hidden;
   `;
 
-  // Gradient overlay at bottom (inspired by Stacks Endowment)
-  const gradientOverlay = document.createElement('div');
-  gradientOverlay.style.cssText = `
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-    opacity: 0.6;
-  `;
-  footer.appendChild(gradientOverlay);
-
-  const container = document.createElement('div');
-  container.className = 'container';
-  container.style.cssText = `
-    padding: var(--space-16) 0 var(--space-8) 0;
+  // Step 1: Hero tagline section (darkest)
+  const step1 = document.createElement('div');
+  step1.style.cssText = `
+    background: var(--color-navy);
+    padding: var(--space-16) 0 var(--space-12) 0;
+    position: relative;
   `;
 
-  // Hero tagline section
-  const taglineSection = document.createElement('div');
-  taglineSection.style.cssText = `
+  const step1Container = document.createElement('div');
+  step1Container.className = 'container';
+  step1Container.style.cssText = `
     text-align: center;
-    margin-bottom: var(--space-12);
   `;
 
   const tagline = document.createElement('h2');
@@ -37,14 +24,25 @@ export function createFooter(): HTMLElement {
   tagline.style.cssText = `
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-text-primary);
     margin: 0;
     letter-spacing: -1px;
     line-height: 1.2;
   `;
-  taglineSection.appendChild(tagline);
+  step1Container.appendChild(tagline);
+  step1.appendChild(step1Container);
 
-  // Navigation links
+  // Step 2: Navigation links (slightly lighter)
+  const step2 = document.createElement('div');
+  step2.style.cssText = `
+    background: var(--color-surface);
+    padding: var(--space-8) 0;
+    position: relative;
+  `;
+
+  const step2Container = document.createElement('div');
+  step2Container.className = 'container';
+
   const navSection = document.createElement('nav');
   navSection.style.cssText = `
     display: flex;
@@ -52,9 +50,6 @@ export function createFooter(): HTMLElement {
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-6);
-    margin-bottom: var(--space-12);
-    padding-bottom: var(--space-8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   `;
 
   const links = [
@@ -77,17 +72,30 @@ export function createFooter(): HTMLElement {
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.5px;
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--color-text-tertiary);
       text-decoration: none;
       transition: color var(--transition-base);
       text-transform: uppercase;
     `;
     a.onmouseenter = () => a.style.color = 'var(--color-gold)';
-    a.onmouseleave = () => a.style.color = 'rgba(255, 255, 255, 0.6)';
+    a.onmouseleave = () => a.style.color = 'var(--color-text-tertiary)';
     navSection.appendChild(a);
   });
 
-  // Bottom section with logo and copyright
+  step2Container.appendChild(navSection);
+  step2.appendChild(step2Container);
+
+  // Step 3: Bottom section with logo and copyright (lightest)
+  const step3 = document.createElement('div');
+  step3.style.cssText = `
+    background: var(--color-surface-hover);
+    padding: var(--space-6) 0;
+    position: relative;
+  `;
+
+  const step3Container = document.createElement('div');
+  step3Container.className = 'container';
+
   const bottomSection = document.createElement('div');
   bottomSection.style.cssText = `
     display: flex;
@@ -119,7 +127,7 @@ export function createFooter(): HTMLElement {
   logoText.style.cssText = `
     font-size: 18px;
     font-weight: 600;
-    color: #FFFFFF;
+    color: var(--color-text-primary);
     letter-spacing: -0.3px;
   `;
 
@@ -137,7 +145,7 @@ export function createFooter(): HTMLElement {
   const copyright = document.createElement('div');
   copyright.style.cssText = `
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-tertiary);
   `;
   copyright.textContent = '© 2026 Lucent';
 
@@ -166,10 +174,10 @@ export function createFooter(): HTMLElement {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius-md);
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--color-text-secondary);
       text-decoration: none;
       font-size: 14px;
       transition: all var(--transition-base);
@@ -190,14 +198,14 @@ export function createFooter(): HTMLElement {
 
     a.onmouseenter = () => {
       a.style.borderColor = 'var(--color-gold)';
-      a.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+      a.style.backgroundColor = 'var(--color-navy)';
       a.style.color = 'var(--color-gold)';
     };
 
     a.onmouseleave = () => {
-      a.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-      a.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-      a.style.color = 'rgba(255, 255, 255, 0.6)';
+      a.style.borderColor = 'var(--color-border)';
+      a.style.backgroundColor = 'var(--color-surface)';
+      a.style.color = 'var(--color-text-secondary)';
     };
 
     socialLinks.appendChild(a);
@@ -209,10 +217,21 @@ export function createFooter(): HTMLElement {
   bottomSection.appendChild(logoContainer);
   bottomSection.appendChild(rightSection);
 
-  container.appendChild(taglineSection);
-  container.appendChild(navSection);
-  container.appendChild(bottomSection);
-  footer.appendChild(container);
+  step3Container.appendChild(bottomSection);
+  step3.appendChild(step3Container);
+
+  // Gold accent line at the very bottom
+  const goldAccent = document.createElement('div');
+  goldAccent.style.cssText = `
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  `;
+
+  // Assemble all steps
+  footer.appendChild(step1);
+  footer.appendChild(step2);
+  footer.appendChild(step3);
+  footer.appendChild(goldAccent);
 
   return footer;
 }
