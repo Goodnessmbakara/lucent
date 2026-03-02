@@ -1,3 +1,5 @@
+import { createComingSoonModal } from './Modal';
+
 export function createHero(): HTMLElement {
   const hero = document.createElement('section');
   hero.className = 'hero';
@@ -173,6 +175,15 @@ export function createHero(): HTMLElement {
     transition: all var(--transition-base);
     box-shadow: 0 8px 24px rgba(255, 184, 77, 0.3);
   `;
+  primaryButton.onclick = () => {
+    const modal = createComingSoonModal(() => {
+      const waitlistSection = document.querySelector('#waitlist');
+      if (waitlistSection) {
+        waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+    document.body.appendChild(modal);
+  };
   primaryButton.onmouseenter = () => {
     primaryButton.style.transform = 'translateY(-2px)';
     primaryButton.style.boxShadow = '0 12px 32px rgba(255, 184, 77, 0.4)';

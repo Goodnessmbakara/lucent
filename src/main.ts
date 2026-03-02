@@ -5,6 +5,7 @@ import { createHero } from './components/Hero';
 import { createTransactionPreview } from './components/TransactionPreview';
 import { createFeatures } from './components/Features';
 import { createHowItWorks } from './components/HowItWorks';
+import { createWaitlistSection } from './components/Waitlist';
 import { createCTA } from './components/CTA';
 import { createFooter } from './components/Footer';
 
@@ -24,6 +25,7 @@ function initializeApp() {
   const howItWorks = createHowItWorks();
   const transactionPreview = createTransactionPreview();
   const features = createFeatures();
+  const waitlist = createWaitlistSection();
   const cta = createCTA();
   const footer = createFooter();
 
@@ -33,6 +35,7 @@ function initializeApp() {
   app.appendChild(howItWorks);
   app.appendChild(transactionPreview);
   app.appendChild(features);
+  app.appendChild(waitlist);
   app.appendChild(cta);
   app.appendChild(footer);
 

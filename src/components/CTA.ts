@@ -1,3 +1,5 @@
+import { createComingSoonModal } from './Modal';
+
 export function createCTA(): HTMLElement {
   const section = document.createElement('section');
   section.style.cssText = `
@@ -71,6 +73,15 @@ export function createCTA(): HTMLElement {
     cursor: pointer;
     transition: all var(--transition-base);
   `;
+  primaryButton.onclick = () => {
+    const modal = createComingSoonModal(() => {
+      const waitlistSection = document.querySelector('#waitlist');
+      if (waitlistSection) {
+        waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+    document.body.appendChild(modal);
+  };
   primaryButton.onmouseenter = () => {
     primaryButton.style.background = '#F5A82B';
     primaryButton.style.transform = 'translateX(4px)';

@@ -1,3 +1,5 @@
+import { createComingSoonModal } from './Modal';
+
 export function createNavigation(): HTMLElement {
   const nav = document.createElement('nav');
   nav.className = 'navigation';
@@ -125,6 +127,15 @@ export function createNavigation(): HTMLElement {
     transition: all var(--transition-base);
     box-shadow: 0 4px 12px rgba(255, 184, 77, 0.3);
   `;
+  ctaButton.onclick = () => {
+    const modal = createComingSoonModal(() => {
+      const waitlistSection = document.querySelector('#waitlist');
+      if (waitlistSection) {
+        waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+    document.body.appendChild(modal);
+  };
   ctaButton.onmouseenter = () => {
     ctaButton.style.transform = 'translateY(-2px)';
     ctaButton.style.boxShadow = '0 6px 16px rgba(255, 184, 77, 0.4)';
