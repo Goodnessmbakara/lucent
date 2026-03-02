@@ -258,28 +258,6 @@ export function createHero(): HTMLElement {
   container.appendChild(ctaContainer);
   container.appendChild(trustIndicators);
 
-  // Product Visual
-  const productVisual = document.createElement('div');
-  productVisual.style.cssText = `
-    margin-top: var(--space-12);
-    position: relative;
-  `;
-
-  const visualImage = document.createElement('img');
-  visualImage.src = '/assets/hero/transaction-preview.svg';
-  visualImage.alt = 'Lucent Transaction Preview';
-  visualImage.style.cssText = `
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: var(--radius-2xl);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 184, 77, 0.1);
-  `;
-
-  productVisual.appendChild(visualImage);
-  container.appendChild(productVisual);
-
   hero.appendChild(container);
 
   return hero;
