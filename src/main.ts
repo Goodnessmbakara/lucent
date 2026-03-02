@@ -2,6 +2,7 @@ import './styles/design-system.css';
 import './styles/main.css';
 import { createNavigation } from './components/Navigation';
 import { createHero } from './components/Hero';
+import { createProductShowcase } from './components/ProductShowcase';
 import { createFeatures } from './components/Features';
 import { createHowItWorks } from './components/HowItWorks';
 import { createCTA } from './components/CTA';
@@ -20,6 +21,7 @@ function initializeApp() {
   // Build the page structure
   const navigation = createNavigation();
   const hero = createHero();
+  const productShowcase = createProductShowcase();
   const features = createFeatures();
   const howItWorks = createHowItWorks();
   const cta = createCTA();
@@ -28,6 +30,7 @@ function initializeApp() {
   // Append all sections
   app.appendChild(navigation);
   app.appendChild(hero);
+  app.appendChild(productShowcase);
   app.appendChild(features);
   app.appendChild(howItWorks);
   app.appendChild(cta);

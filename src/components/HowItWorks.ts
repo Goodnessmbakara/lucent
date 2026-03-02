@@ -171,28 +171,6 @@ export function createHowItWorks(): HTMLElement {
 
   container.appendChild(header);
   container.appendChild(stepsContainer);
-
-  // Browser Extension Mockup
-  const mockupVisual = document.createElement('div');
-  mockupVisual.style.cssText = `
-    margin-top: var(--space-16);
-    text-align: center;
-  `;
-
-  const mockupImage = document.createElement('img');
-  mockupImage.src = '/mockups/browser-extension.svg';
-  mockupImage.alt = 'Lucent Browser Extension in Action';
-  mockupImage.style.cssText = `
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    border-radius: var(--radius-2xl);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
-  `;
-
-  mockupVisual.appendChild(mockupImage);
-  container.appendChild(mockupVisual);
-
   section.appendChild(container);
 
   return section;

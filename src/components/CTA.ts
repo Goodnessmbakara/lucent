@@ -2,146 +2,110 @@ export function createCTA(): HTMLElement {
   const section = document.createElement('section');
   section.style.cssText = `
     padding: var(--space-20) 0;
-    position: relative;
+    border-top: 1px solid rgba(255, 184, 77, 0.1);
   `;
-
-  // Background gradient
-  const gradientBg = document.createElement('div');
-  gradientBg.style.cssText = `
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(255, 184, 77, 0.08) 0%,
-      transparent 70%
-    );
-    pointer-events: none;
-  `;
-  section.appendChild(gradientBg);
 
   const container = document.createElement('div');
   container.className = 'container';
   container.style.cssText = `
-    position: relative;
-    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
   `;
 
-  const card = document.createElement('div');
-  card.style.cssText = `
-    max-width: 900px;
-    margin: 0 auto;
-    padding: var(--space-12) var(--space-8);
-    background: linear-gradient(135deg, rgba(255, 184, 77, 0.1) 0%, rgba(74, 158, 255, 0.05) 100%);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-2xl);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  `;
+  // Responsive grid
+  const updateGrid = () => {
+    if (window.innerWidth >= 768) {
+      container.style.gridTemplateColumns = '1fr auto';
+    } else {
+      container.style.gridTemplateColumns = '1fr';
+    }
+  };
+  updateGrid();
+  window.addEventListener('resize', updateGrid);
 
-  // Shine effect
-  const shine = document.createElement('div');
-  shine.style.cssText = `
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      45deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.05) 50%,
-      transparent 70%
-    );
-    transform: rotate(45deg);
-    pointer-events: none;
-  `;
-  card.appendChild(shine);
-
-  const content = document.createElement('div');
-  content.style.cssText = 'position: relative; z-index: 1;';
+  // Left side - Direct copy
+  const textContainer = document.createElement('div');
 
   const heading = document.createElement('h2');
-  heading.textContent = 'Ready to Sign with Confidence?';
+  heading.textContent = 'Never sign blind';
   heading.style.cssText = `
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-5xl);
     font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-    margin-bottom: var(--space-4);
+    line-height: 1.1;
+    margin-bottom: var(--space-3);
     color: var(--color-text-primary);
   `;
 
   const description = document.createElement('p');
-  description.textContent = 'Join thousands of users protecting their assets with Lucent. Free and open source.';
+  description.textContent = 'Browser extension for Chrome and Firefox. Free, open source.';
   description.style.cssText = `
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-8);
   `;
 
-  const buttonContainer = document.createElement('div');
-  buttonContainer.style.cssText = `
+  textContainer.appendChild(heading);
+  textContainer.appendChild(description);
+
+  // Right side - Actions
+  const actionsContainer = document.createElement('div');
+  actionsContainer.style.cssText = `
     display: flex;
+    flex-direction: column;
     gap: var(--space-3);
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: flex-start;
   `;
 
   const primaryButton = document.createElement('button');
-  primaryButton.textContent = 'Get Started Free';
+  primaryButton.textContent = 'Add to Chrome';
   primaryButton.style.cssText = `
-    padding: var(--space-3) var(--space-8);
-    background: linear-gradient(135deg, var(--color-gold) 0%, #F5A82B 100%);
+    padding: var(--space-3) var(--space-6);
+    background: var(--color-gold);
     color: var(--color-navy);
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     border: none;
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     cursor: pointer;
     transition: all var(--transition-base);
-    box-shadow: 0 8px 24px rgba(255, 184, 77, 0.3);
   `;
   primaryButton.onmouseenter = () => {
-    primaryButton.style.transform = 'translateY(-2px)';
-    primaryButton.style.boxShadow = '0 12px 32px rgba(255, 184, 77, 0.4)';
+    primaryButton.style.background = '#F5A82B';
+    primaryButton.style.transform = 'translateX(4px)';
   };
   primaryButton.onmouseleave = () => {
-    primaryButton.style.transform = 'translateY(0)';
-    primaryButton.style.boxShadow = '0 8px 24px rgba(255, 184, 77, 0.3)';
+    primaryButton.style.background = 'var(--color-gold)';
+    primaryButton.style.transform = 'translateX(0)';
   };
 
-  const secondaryButton = document.createElement('a');
-  secondaryButton.textContent = 'View Documentation →';
-  secondaryButton.href = '#docs';
-  secondaryButton.style.cssText = `
-    display: inline-flex;
-    align-items: center;
-    padding: var(--space-3) var(--space-8);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
+  const githubLink = document.createElement('a');
+  githubLink.textContent = 'Star on GitHub →';
+  githubLink.href = 'https://github.com/Goodnessmbakara/lucent';
+  githubLink.target = '_blank';
+  githubLink.rel = 'noopener noreferrer';
+  githubLink.style.cssText = `
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-tertiary);
     text-decoration: none;
-    transition: color var(--transition-base);
+    transition: all var(--transition-base);
   `;
-  secondaryButton.onmouseenter = () => {
-    secondaryButton.style.color = 'var(--color-gold)';
+  githubLink.onmouseenter = () => {
+    githubLink.style.color = 'var(--color-text-primary)';
+    githubLink.style.transform = 'translateX(4px)';
   };
-  secondaryButton.onmouseleave = () => {
-    secondaryButton.style.color = 'var(--color-text-primary)';
+  githubLink.onmouseleave = () => {
+    githubLink.style.color = 'var(--color-text-tertiary)';
+    githubLink.style.transform = 'translateX(0)';
   };
 
-  buttonContainer.appendChild(primaryButton);
-  buttonContainer.appendChild(secondaryButton);
+  actionsContainer.appendChild(primaryButton);
+  actionsContainer.appendChild(githubLink);
 
-  content.appendChild(heading);
-  content.appendChild(description);
-  content.appendChild(buttonContainer);
-  card.appendChild(content);
-  container.appendChild(card);
+  container.appendChild(textContainer);
+  container.appendChild(actionsContainer);
   section.appendChild(container);
 
   return section;
