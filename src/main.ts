@@ -21,18 +21,18 @@ function initializeApp() {
   // Build the page structure
   const navigation = createNavigation();
   const hero = createHero();
+  const howItWorks = createHowItWorks();
   const transactionPreview = createTransactionPreview();
   const features = createFeatures();
-  const howItWorks = createHowItWorks();
   const cta = createCTA();
   const footer = createFooter();
 
   // Append all sections
   app.appendChild(navigation);
   app.appendChild(hero);
+  app.appendChild(howItWorks);
   app.appendChild(transactionPreview);
   app.appendChild(features);
-  app.appendChild(howItWorks);
   app.appendChild(cta);
   app.appendChild(footer);
 
