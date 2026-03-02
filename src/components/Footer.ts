@@ -1,21 +1,16 @@
 export function createFooter(): HTMLElement {
   const footer = document.createElement('footer');
   footer.style.cssText = `
+    background: var(--color-navy);
     position: relative;
     overflow: hidden;
   `;
 
-  // Step 1: Hero tagline section (darkest)
-  const step1 = document.createElement('div');
-  step1.style.cssText = `
-    background: var(--color-navy);
+  // Top section with tagline
+  const topSection = document.createElement('div');
+  topSection.className = 'container';
+  topSection.style.cssText = `
     padding: var(--space-16) 0 var(--space-12) 0;
-    position: relative;
-  `;
-
-  const step1Container = document.createElement('div');
-  step1Container.className = 'container';
-  step1Container.style.cssText = `
     text-align: center;
   `;
 
@@ -29,27 +24,22 @@ export function createFooter(): HTMLElement {
     letter-spacing: -1px;
     line-height: 1.2;
   `;
-  step1Container.appendChild(tagline);
-  step1.appendChild(step1Container);
+  topSection.appendChild(tagline);
 
-  // Step 2: Navigation links (slightly lighter)
-  const step2 = document.createElement('div');
-  step2.style.cssText = `
-    background: var(--color-surface);
-    padding: var(--space-8) 0;
+  // Stepped navigation section - horizontal steps
+  const stepsWrapper = document.createElement('div');
+  stepsWrapper.style.cssText = `
     position: relative;
+    margin-bottom: var(--space-8);
   `;
 
-  const step2Container = document.createElement('div');
-  step2Container.className = 'container';
-
-  const navSection = document.createElement('nav');
-  navSection.style.cssText = `
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-6);
+  const stepsContainer = document.createElement('div');
+  stepsContainer.className = 'container';
+  stepsContainer.style.cssText = `
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    padding: 0;
   `;
 
   const links = [
@@ -60,7 +50,28 @@ export function createFooter(): HTMLElement {
     { text: '@LUCENT', href: 'https://twitter.com', external: true }
   ];
 
-  links.forEach(link => {
+  // Create stepped boxes - each progressively lighter
+  const backgrounds = [
+    'var(--color-surface)',
+    'var(--color-surface-hover)',
+    '#1E2440',
+    '#252B4D',
+    '#2C3259'
+  ];
+
+  links.forEach((link, index) => {
+    const stepBox = document.createElement('div');
+    stepBox.style.cssText = `
+      background: ${backgrounds[index]};
+      padding: var(--space-4) var(--space-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+      cursor: pointer;
+      border: 1px solid rgba(255, 184, 77, 0.1);
+    `;
+
     const a = document.createElement('a');
     a.href = link.href;
     a.textContent = link.text;
@@ -69,40 +80,45 @@ export function createFooter(): HTMLElement {
       a.rel = 'noopener noreferrer';
     }
     a.style.cssText = `
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.5px;
       color: var(--color-text-tertiary);
       text-decoration: none;
       transition: color var(--transition-base);
       text-transform: uppercase;
+      white-space: nowrap;
     `;
-    a.onmouseenter = () => a.style.color = 'var(--color-gold)';
-    a.onmouseleave = () => a.style.color = 'var(--color-text-tertiary)';
-    navSection.appendChild(a);
+
+    stepBox.onmouseenter = () => {
+      stepBox.style.background = 'var(--color-gold)';
+      stepBox.style.transform = 'translateY(-4px)';
+      a.style.color = 'var(--color-navy)';
+    };
+
+    stepBox.onmouseleave = () => {
+      stepBox.style.background = backgrounds[index];
+      stepBox.style.transform = 'translateY(0)';
+      a.style.color = 'var(--color-text-tertiary)';
+    };
+
+    stepBox.appendChild(a);
+    stepsContainer.appendChild(stepBox);
   });
 
-  step2Container.appendChild(navSection);
-  step2.appendChild(step2Container);
+  stepsWrapper.appendChild(stepsContainer);
 
-  // Step 3: Bottom section with logo and copyright (lightest)
-  const step3 = document.createElement('div');
-  step3.style.cssText = `
-    background: var(--color-surface-hover);
-    padding: var(--space-6) 0;
-    position: relative;
-  `;
-
-  const step3Container = document.createElement('div');
-  step3Container.className = 'container';
-
+  // Bottom section
   const bottomSection = document.createElement('div');
+  bottomSection.className = 'container';
   bottomSection.style.cssText = `
+    padding: var(--space-6) 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-6);
+    border-top: 1px solid rgba(255, 184, 77, 0.1);
   `;
 
   // Logo section
@@ -198,8 +214,8 @@ export function createFooter(): HTMLElement {
 
     a.onmouseenter = () => {
       a.style.borderColor = 'var(--color-gold)';
-      a.style.backgroundColor = 'var(--color-navy)';
-      a.style.color = 'var(--color-gold)';
+      a.style.backgroundColor = 'var(--color-gold)';
+      a.style.color = 'var(--color-navy)';
     };
 
     a.onmouseleave = () => {
@@ -217,9 +233,6 @@ export function createFooter(): HTMLElement {
   bottomSection.appendChild(logoContainer);
   bottomSection.appendChild(rightSection);
 
-  step3Container.appendChild(bottomSection);
-  step3.appendChild(step3Container);
-
   // Gold accent line at the very bottom
   const goldAccent = document.createElement('div');
   goldAccent.style.cssText = `
@@ -227,10 +240,10 @@ export function createFooter(): HTMLElement {
     background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
   `;
 
-  // Assemble all steps
-  footer.appendChild(step1);
-  footer.appendChild(step2);
-  footer.appendChild(step3);
+  // Assemble all sections
+  footer.appendChild(topSection);
+  footer.appendChild(stepsWrapper);
+  footer.appendChild(bottomSection);
   footer.appendChild(goldAccent);
 
   return footer;
