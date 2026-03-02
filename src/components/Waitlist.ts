@@ -10,8 +10,19 @@ export function createWaitlistSection(): HTMLElement {
   const container = document.createElement('div');
   container.className = 'container';
   container.style.cssText = `
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
+  `;
+
+  // Card wrapper
+  const card = document.createElement('div');
+  card.style.cssText = `
+    background: linear-gradient(135deg, rgba(19, 23, 40, 0.8) 0%, rgba(26, 31, 53, 0.8) 100%);
+    border: 1px solid rgba(255, 184, 77, 0.2);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12) var(--space-10);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 184, 77, 0.05);
+    backdrop-filter: blur(10px);
   `;
 
   const heading = document.createElement('h2');
@@ -170,10 +181,11 @@ export function createWaitlistSection(): HTMLElement {
   inputWrapper.appendChild(submitButton);
   form.appendChild(inputWrapper);
 
-  container.appendChild(heading);
-  container.appendChild(description);
-  container.appendChild(form);
-  container.appendChild(successMessage);
+  card.appendChild(heading);
+  card.appendChild(description);
+  card.appendChild(form);
+  card.appendChild(successMessage);
+  container.appendChild(card);
   section.appendChild(container);
 
   return section;
