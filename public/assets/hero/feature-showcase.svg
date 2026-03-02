@@ -1,0 +1,230 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Feature Showcase: 3-Panel Layout -->
+
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient-fs" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0E27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1F3A;stop-opacity:1" />
+    </linearGradient>
+
+    <radialGradient id="spotlight-1" cx="20%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFB84D;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#FFB84D;stop-opacity:0" />
+    </radialGradient>
+
+    <radialGradient id="spotlight-2" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#4A9EFF;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#4A9EFF;stop-opacity:0" />
+    </radialGradient>
+
+    <radialGradient id="spotlight-3" cx="80%" cy="50%">
+      <stop offset="0%" style="stop-color:#27C93F;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#27C93F;stop-opacity:0" />
+    </radialGradient>
+
+    <filter id="panel-shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="icon-glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="card-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg-gradient-fs)"/>
+  <ellipse cx="240" cy="200" rx="300" ry="250" fill="url(#spotlight-1)"/>
+  <ellipse cx="600" cy="200" rx="300" ry="250" fill="url(#spotlight-2)"/>
+  <ellipse cx="960" cy="200" rx="300" ry="250" fill="url(#spotlight-3)"/>
+
+  <!-- Grid Pattern -->
+  <pattern id="grid-pattern" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="400" fill="url(#grid-pattern)"/>
+
+  <!-- Panel 1: Transaction Decode -->
+  <g id="panel-1">
+    <rect x="40" y="60" width="340" height="280" rx="16" fill="url(#card-gradient-1)" stroke="rgba(255,184,77,0.2)" stroke-width="2" filter="url(#panel-shadow)"/>
+
+    <!-- Icon -->
+    <g transform="translate(210, 90)">
+      <circle cx="0" cy="0" r="30" fill="#FFB84D" opacity="0.15"/>
+      <g transform="scale(0.4)">
+        <path d="M -25 -25 L -25 25 L 25 25" stroke="#FFB84D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#icon-glow)"/>
+        <path d="M 5 -15 L 5 5 M -5 -5 L 15 -5" stroke="#FFB84D" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Content -->
+    <text x="210" y="165" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+      Transaction Decode
+    </text>
+
+    <text x="210" y="195" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      Raw contract calls transformed
+    </text>
+    <text x="210" y="213" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      into human-readable actions
+    </text>
+
+    <!-- Example -->
+    <rect x="60" y="230" width="300" height="90" rx="8" fill="rgba(0,0,0,0.2)"/>
+
+    <text x="75" y="250" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(255,255,255,0.4)">
+      contract-call? SP...swap...
+    </text>
+
+    <path d="M 210 258 L 210 268" stroke="#FFB84D" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 205 268 L 210 273 L 215 268" stroke="#FFB84D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <text x="210" y="290" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Swap 10 STX → 45 ALEX
+    </text>
+    <text x="210" y="308" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="middle">
+      ≈ $15.50 USD
+    </text>
+  </g>
+
+  <!-- Panel 2: Security Scan -->
+  <g id="panel-2">
+    <rect x="430" y="60" width="340" height="280" rx="16" fill="url(#card-gradient-1)" stroke="rgba(74,158,255,0.2)" stroke-width="2" filter="url(#panel-shadow)"/>
+
+    <!-- Icon -->
+    <g transform="translate(600, 90)">
+      <circle cx="0" cy="0" r="30" fill="#4A9EFF" opacity="0.15"/>
+      <g transform="scale(0.4)">
+        <!-- Shield -->
+        <path d="M 0 -25 L 15 -20 Q 20 0 15 20 Q 0 28 0 28 Q 0 28 -15 20 Q -20 0 -15 -20 Z"
+              stroke="#4A9EFF" stroke-width="5" fill="none" filter="url(#icon-glow)"/>
+        <!-- Check mark -->
+        <path d="M -8 2 L -2 10 L 12 -8" stroke="#4A9EFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+    </g>
+
+    <!-- Content -->
+    <text x="600" y="165" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+      Security Scan
+    </text>
+
+    <text x="600" y="195" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      Real-time threat detection
+    </text>
+    <text x="600" y="213" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      and risk assessment
+    </text>
+
+    <!-- Security Checks -->
+    <g transform="translate(460, 235)">
+      <!-- Check 1 -->
+      <circle cx="8" cy="8" r="6" fill="#27C93F"/>
+      <path d="M 5 8 L 7 10 L 11 6" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="25" y="12" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">
+        Contract verified
+      </text>
+
+      <!-- Check 2 -->
+      <circle cx="8" cy="33" r="6" fill="#27C93F"/>
+      <path d="M 5 33 L 7 35 L 11 31" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="25" y="37" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">
+        No phishing detected
+      </text>
+
+      <!-- Check 3 -->
+      <circle cx="8" cy="58" r="6" fill="#27C93F"/>
+      <path d="M 5 58 L 7 60 L 11 56" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="25" y="62" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">
+        Safe token approvals
+      </text>
+
+      <!-- Score Badge -->
+      <rect x="200" y="15" width="70" height="35" rx="8" fill="#4A9EFF" opacity="0.2"/>
+      <text x="235" y="30" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#4A9EFF" text-anchor="middle">
+        95
+      </text>
+      <text x="235" y="43" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+        SCORE
+      </text>
+    </g>
+  </g>
+
+  <!-- Panel 3: One-Click Actions -->
+  <g id="panel-3">
+    <rect x="820" y="60" width="340" height="280" rx="16" fill="url(#card-gradient-1)" stroke="rgba(39,201,63,0.2)" stroke-width="2" filter="url(#panel-shadow)"/>
+
+    <!-- Icon -->
+    <g transform="translate(990, 90)">
+      <circle cx="0" cy="0" r="30" fill="#27C93F" opacity="0.15"/>
+      <g transform="scale(0.4)">
+        <!-- Click cursor -->
+        <path d="M -15 -15 L -15 10 L -5 5 L 0 15 L 5 13 L 0 3 L 10 3 Z"
+              stroke="#27C93F" stroke-width="4" fill="#27C93F" filter="url(#icon-glow)"/>
+        <!-- Sparkles -->
+        <circle cx="15" cy="-15" r="2" fill="#27C93F"/>
+        <circle cx="20" cy="-5" r="1.5" fill="#27C93F"/>
+      </g>
+    </g>
+
+    <!-- Content -->
+    <text x="990" y="165" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+      One-Click Actions
+    </text>
+
+    <text x="990" y="195" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      Approve or reject with
+    </text>
+    <text x="990" y="213" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      complete confidence
+    </text>
+
+    <!-- Action Buttons -->
+    <g transform="translate(850, 240)">
+      <!-- Reject Button -->
+      <rect x="0" y="0" width="130" height="50" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+      <text x="65" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="rgba(255,255,255,0.8)" text-anchor="middle">
+        Reject
+      </text>
+
+      <!-- Approve Button -->
+      <rect x="150" y="0" width="130" height="50" rx="10" fill="#27C93F"/>
+      <text x="215" y="32" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+        Approve
+      </text>
+
+      <!-- Stats -->
+      <text x="140" y="75" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">
+        ⚡ Instant • 🔒 Secure • ✓ Verified
+      </text>
+    </g>
+  </g>
+
+  <!-- Lucent Branding -->
+  <g transform="translate(560, 365)">
+    <g transform="scale(0.25)">
+      <path d="M 8 8 L 8 72 L 48 72"
+            stroke="#FFB84D"
+            stroke-width="14"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"/>
+      <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+            stroke="#FFB84D"
+            stroke-width="14"
+            stroke-linecap="round"
+            fill="none"/>
+      <circle cx="40" cy="40" r="6" fill="#FFB84D" filter="url(#icon-glow)"/>
+    </g>
+    <text x="30" y="13" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">
+      Lucent
+    </text>
+  </g>
+</svg>

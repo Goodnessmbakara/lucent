@@ -1,0 +1,146 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mobile App Mockup -->
+
+  <!-- Background -->
+  <rect width="900" height="1200" fill="#F5F6F9"/>
+
+  <!-- iPhone Frame -->
+  <g id="iphone" transform="translate(250, 100)">
+    <!-- Phone Shadow -->
+    <rect x="5" y="5" width="400" height="850" rx="50" fill="#000" opacity="0.1"/>
+
+    <!-- Phone Body -->
+    <rect x="0" y="0" width="400" height="850" rx="50" fill="#1A1D2E" stroke="#2A2D3E" stroke-width="8"/>
+
+    <!-- Screen -->
+    <rect x="15" y="15" width="370" height="820" rx="38" fill="#0A0E27"/>
+
+    <!-- Notch -->
+    <rect x="150" y="15" width="100" height="28" rx="14" fill="#1A1D2E"/>
+
+    <!-- App Content -->
+    <g id="app-screen" clip-path="url(#screen-clip)">
+      <clipPath id="screen-clip">
+        <rect x="15" y="45" width="370" height="790" rx="38"/>
+      </clipPath>
+
+      <!-- Status Bar -->
+      <rect x="15" y="45" width="370" height="44" fill="rgba(0,0,0,0.3)"/>
+      <text x="30" y="72" font-family="-apple-system" font-size="14" font-weight="600" fill="#FFFFFF">
+        9:41
+      </text>
+
+      <!-- App Header -->
+      <rect x="15" y="89" width="370" height="80" fill="#131728"/>
+
+      <!-- Logo in Header -->
+      <g transform="translate(35, 105)">
+        <!-- Mini Icon -->
+        <g transform="scale(0.3)">
+          <path d="M 8 8 L 8 72 L 48 72"
+                stroke="#FFFFFF"
+                stroke-width="14"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"/>
+          <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+                stroke="#FFFFFF"
+                stroke-width="14"
+                stroke-linecap="round"
+                fill="none"/>
+          <circle cx="40" cy="40" r="6" fill="#FFB84D"/>
+        </g>
+
+        <text x="30" y="26" font-family="-apple-system" font-size="22" font-weight="600" fill="#FFFFFF">
+          Lucent
+        </text>
+        <text x="30" y="45" font-family="-apple-system" font-size="12" fill="rgba(255,255,255,0.6)">
+          Transaction Preview
+        </text>
+      </g>
+
+      <!-- Security Score Card -->
+      <g transform="translate(35, 190)">
+        <rect width="320" height="120" rx="16" fill="rgba(39,201,63,0.1)" stroke="rgba(39,201,63,0.3)" stroke-width="2"/>
+
+        <circle cx="30" cy="30" r="16" fill="#27C93F"/>
+        <text x="22" y="37" font-family="-apple-system" font-size="20" fill="#FFFFFF">✓</text>
+
+        <text x="60" y="28" font-family="-apple-system" font-size="16" font-weight="600" fill="#27C93F">
+          Secure
+        </text>
+        <text x="60" y="48" font-family="-apple-system" font-size="13" fill="rgba(255,255,255,0.6)">
+          This transaction looks safe
+        </text>
+
+        <text x="20" y="85" font-family="-apple-system" font-size="28" font-weight="700" fill="#FFFFFF">
+          95
+        </text>
+        <text x="52" y="85" font-family="-apple-system" font-size="14" fill="rgba(255,255,255,0.6)">
+          / 100
+        </text>
+
+        <text x="20" y="105" font-family="-apple-system" font-size="12" fill="rgba(255,255,255,0.5)">
+          Security Score
+        </text>
+      </g>
+
+      <!-- Transaction Details -->
+      <g transform="translate(35, 330)">
+        <text font-family="-apple-system" font-size="18" font-weight="600" fill="#FFFFFF">
+          Transaction Details
+        </text>
+
+        <!-- From/To -->
+        <rect y="35" width="320" height="80" rx="12" fill="#131728"/>
+        <text x="20" y="60" font-family="-apple-system" font-size="13" fill="rgba(255,255,255,0.6)">
+          From
+        </text>
+        <text x="20" y="80" font-family="monospace" font-size="12" font-weight="600" fill="#FFFFFF">
+          SP2J6...EJ7
+        </text>
+        <text x="20" y="105" font-family="-apple-system" font-size="13" fill="rgba(255,255,255,0.6)">
+          To: ALEX Swap Pool
+        </text>
+
+        <!-- Amount -->
+        <rect y="135" width="320" height="80" rx="12" fill="#131728"/>
+        <text x="20" y="160" font-family="-apple-system" font-size="13" fill="rgba(255,255,255,0.6)">
+          Amount
+        </text>
+        <text x="20" y="185" font-family="-apple-system" font-size="24" font-weight="700" fill="#FFFFFF">
+          10 STX
+        </text>
+        <text x="20" y="205" font-family="-apple-system" font-size="13" fill="rgba(255,255,255,0.5)">
+          ≈ $15.50 USD
+        </text>
+      </g>
+
+      <!-- Bottom Action Buttons -->
+      <g transform="translate(35, 700)">
+        <rect width="150" height="52" rx="26" fill="rgba(255,255,255,0.1)"/>
+        <text x="50" y="33" font-family="-apple-system" font-size="16" font-weight="600" fill="#FFFFFF">
+          Reject
+        </text>
+
+        <rect x="170" width="150" height="52" rx="26" fill="#FFB84D"/>
+        <text x="207" y="33" font-family="-apple-system" font-size="16" font-weight="600" fill="#0A0E27">
+          Approve
+        </text>
+      </g>
+
+      <!-- Home Indicator -->
+      <rect x="150" y="810" width="100" height="5" rx="2.5" fill="rgba(255,255,255,0.3)"/>
+    </g>
+  </g>
+
+  <!-- Label -->
+  <g transform="translate(100, 1020)">
+    <text font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#0A0E27">
+      Mobile App
+    </text>
+    <text y="45" font-family="Inter, sans-serif" font-size="16" fill="#666">
+      Native iOS/Android experience with full transaction preview
+    </text>
+  </g>
+</svg>

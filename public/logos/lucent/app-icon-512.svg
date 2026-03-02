@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- App Icon 512x512 - High Resolution -->
+
+  <!-- Optional: Rounded square background for iOS style -->
+  <!-- <rect width="512" height="512" rx="102" fill="#FFFFFF"/> -->
+
+  <g id="monogram-minimal" transform="translate(128, 128)">
+    <!-- L Shape -->
+    <path d="M 26 26 L 26 230 L 154 230"
+          stroke="#0A0E27"
+          stroke-width="46"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+
+    <!-- C Shape -->
+    <path d="M 230 77 Q 230 26 179 26 Q 128 26 128 77 L 128 179 Q 128 230 179 230 Q 230 230 230 179"
+          stroke="#0A0E27"
+          stroke-width="46"
+          stroke-linecap="round"
+          fill="none"/>
+
+    <!-- Center Dot -->
+    <defs>
+      <filter id="glow-512">
+        <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <circle cx="128" cy="128" r="20" fill="#FFB84D"/>
+    <circle cx="128" cy="128" r="30" fill="#FFB84D" opacity="0.3"/>
+    <circle cx="128" cy="128" r="40" fill="#FFB84D" opacity="0.15"/>
+  </g>
+</svg>

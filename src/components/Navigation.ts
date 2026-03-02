@@ -1,5 +1,3 @@
-import { createSimpleLogo } from './Logo';
-
 export function createNavigation(): HTMLElement {
   const nav = document.createElement('nav');
   nav.className = 'navigation';
@@ -9,9 +7,9 @@ export function createNavigation(): HTMLElement {
     left: 0;
     right: 0;
     z-index: var(--z-sticky);
-    background: rgba(10, 14, 39, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border);
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 184, 77, 0.1);
   `;
 
   const container = document.createElement('div');
@@ -20,19 +18,46 @@ export function createNavigation(): HTMLElement {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    height: 80px;
+    max-width: 1400px;
+    padding: 0 var(--space-6);
   `;
 
-  // Logo
+  // Logo with icon + text
   const logoLink = document.createElement('a');
   logoLink.href = '#';
   logoLink.style.cssText = `
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
     transition: opacity var(--transition-base);
   `;
   logoLink.onmouseenter = () => logoLink.style.opacity = '0.8';
   logoLink.onmouseleave = () => logoLink.style.opacity = '1';
-  logoLink.appendChild(createSimpleLogo({ size: 'md' }));
+
+  // Logo icon (monogram-minimal)
+  const logoIcon = document.createElement('img');
+  logoIcon.src = '/logos/lucent/icon-dark.svg';
+  logoIcon.alt = 'Lucent';
+  logoIcon.style.cssText = `
+    width: 32px;
+    height: 32px;
+    display: block;
+  `;
+
+  // Logo text
+  const logoText = document.createElement('span');
+  logoText.textContent = 'Lucent';
+  logoText.style.cssText = `
+    font-size: 22px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  `;
+
+  logoLink.appendChild(logoIcon);
+  logoLink.appendChild(logoText);
 
   // Nav Links
   const navLinks = document.createElement('div');

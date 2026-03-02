@@ -1,0 +1,46 @@
+<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lucent Logo - Horizontal with Wordmark (Dark) -->
+  <rect width="400" height="120" fill="#0A0E27"/>
+
+  <!-- Icon -->
+  <g id="icon" transform="translate(20, 20)">
+    <!-- L Shape -->
+    <path d="M 8 8 L 8 72 L 48 72"
+          stroke="#FFFFFF"
+          stroke-width="14"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+
+    <!-- C Shape -->
+    <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+          stroke="#FFFFFF"
+          stroke-width="14"
+          stroke-linecap="round"
+          fill="none"/>
+
+    <!-- Center Dot with glow -->
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <circle cx="40" cy="40" r="14" fill="#FFB84D" opacity="0.3"/>
+    <circle cx="40" cy="40" r="6" fill="#FFB84D" filter="url(#glow)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="130" y="70" font-family="Inter, sans-serif" font-size="40" font-weight="600" fill="#FFFFFF" letter-spacing="-0.5">
+    Lucent
+  </text>
+
+  <!-- Tagline -->
+  <text x="130" y="95" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="0.3">
+    See clearly before you sign
+  </text>
+</svg>

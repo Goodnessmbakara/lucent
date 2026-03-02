@@ -49,31 +49,33 @@ export function createHero(): HTMLElement {
     max-width: 960px;
   `;
 
-  // Badge
-  const badge = document.createElement('div');
-  badge.style.cssText = `
-    display: inline-flex;
+  // Subtle indicator (no generic badge)
+  const indicator = document.createElement('div');
+  indicator.style.cssText = `
+    display: flex;
     align-items: center;
-    gap: var(--space-1);
-    padding: var(--space-1) var(--space-3);
-    background: rgba(255, 184, 77, 0.1);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-gold);
+    justify-content: center;
+    gap: var(--space-2);
     margin-bottom: var(--space-6);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    letter-spacing: 0.05em;
   `;
 
-  const badgeIcon = document.createElement('span');
-  badgeIcon.textContent = '⚡';
-  badgeIcon.style.cssText = 'font-size: var(--font-size-base);';
+  const indicatorDot = document.createElement('span');
+  indicatorDot.style.cssText = `
+    width: 6px;
+    height: 6px;
+    background: var(--color-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 184, 77, 0.6);
+  `;
 
-  const badgeText = document.createElement('span');
-  badgeText.textContent = 'Built for Stacks';
+  const indicatorText = document.createElement('span');
+  indicatorText.textContent = 'TRANSACTION PREVIEW FOR STACKS';
 
-  badge.appendChild(badgeIcon);
-  badge.appendChild(badgeText);
+  indicator.appendChild(indicatorDot);
+  indicator.appendChild(indicatorText);
 
   // Main Heading
   const heading = document.createElement('h1');
@@ -213,7 +215,7 @@ export function createHero(): HTMLElement {
     trustIndicators.appendChild(indicator);
   });
 
-  container.appendChild(badge);
+  container.appendChild(indicator);
   container.appendChild(heading);
   container.appendChild(subtitle);
   container.appendChild(ctaContainer);

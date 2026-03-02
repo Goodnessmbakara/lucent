@@ -1,0 +1,119 @@
+<svg width="1400" height="600" viewBox="0 0 1400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Website Header Mockup -->
+
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0E27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1F3A;stop-opacity:1" />
+    </linearGradient>
+
+    <radialGradient id="glow-spot" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFB84D;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#FFB84D;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1400" height="600" fill="url(#bg-gradient)"/>
+  <ellipse cx="700" cy="150" rx="600" ry="300" fill="url(#glow-spot)"/>
+
+  <!-- Grid Pattern Overlay -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,184,77,0.05)" stroke-width="1"/>
+  </pattern>
+  <rect width="1400" height="600" fill="url(#grid)"/>
+
+  <!-- Navigation Bar -->
+  <g id="navbar">
+    <rect x="100" y="40" width="1200" height="70" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,184,77,0.1)" stroke-width="1"/>
+
+    <!-- Logo -->
+    <g transform="translate(130, 50)">
+      <!-- Icon -->
+      <g transform="scale(0.35)">
+        <path d="M 8 8 L 8 72 L 48 72"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"/>
+        <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              fill="none"/>
+        <circle cx="40" cy="40" r="6" fill="#FFB84D"/>
+        <circle cx="40" cy="40" r="10" fill="#FFB84D" opacity="0.3"/>
+      </g>
+
+      <text x="35" y="32" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">
+        Lucent
+      </text>
+    </g>
+
+    <!-- Nav Links -->
+    <text x="500" y="82" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="rgba(255,255,255,0.7)">
+      Features
+    </text>
+    <text x="600" y="82" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="rgba(255,255,255,0.7)">
+      How It Works
+    </text>
+    <text x="740" y="82" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="rgba(255,255,255,0.7)">
+      Docs
+    </text>
+
+    <!-- CTA Button -->
+    <rect x="1080" y="60" width="160" height="40" rx="8" fill="#FFB84D"/>
+    <text x="1120" y="85" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0A0E27">
+      Get Extension
+    </text>
+  </g>
+
+  <!-- Hero Content -->
+  <g id="hero" transform="translate(200, 200)">
+    <!-- Badge -->
+    <rect x="0" y="0" width="140" height="32" rx="16" fill="rgba(255,184,77,0.1)" stroke="rgba(255,184,77,0.3)" stroke-width="1"/>
+    <text x="15" y="21" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFB84D">
+      ⚡ Built for Stacks
+    </text>
+
+    <!-- Main Heading -->
+    <text x="0" y="90" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF" letter-spacing="-2">
+      See clearly
+    </text>
+    <text x="0" y="160" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF" letter-spacing="-2">
+      before you sign
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="210" font-family="Inter, sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">
+      Lucent previews your Stacks transactions with detailed insights
+    </text>
+    <text x="0" y="240" font-family="Inter, sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">
+      and security warnings before you commit. Never sign blind again.
+    </text>
+
+    <!-- CTA Buttons -->
+    <rect x="0" y="280" width="200" height="56" rx="12" fill="#FFB84D"/>
+    <text x="43" y="313" font-family="Inter, sans-serif" font-size="17" font-weight="600" fill="#0A0E27">
+      Add to Chrome
+    </text>
+
+    <text x="230" y="313" font-family="Inter, sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.9)">
+      View on GitHub →
+    </text>
+  </g>
+
+  <!-- Trust Indicators -->
+  <g transform="translate(200, 520)">
+    <text font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">
+      🔒 End-to-End Encrypted
+    </text>
+    <text x="230" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">
+      ⚡ Real-Time Analysis
+    </text>
+    <text x="450" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">
+      🛡️ Phishing Protection
+    </text>
+  </g>
+</svg>

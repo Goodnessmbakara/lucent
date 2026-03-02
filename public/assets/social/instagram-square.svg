@@ -1,0 +1,150 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Instagram Square Post: 1080x1080px -->
+
+  <defs>
+    <!-- Radial Gradient Background -->
+    <radialGradient id="ig-bg-gradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1A1F3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0E27;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Grid Pattern for Depth -->
+    <pattern id="ig-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(74, 158, 255, 0.06)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Glow Effects -->
+    <filter id="ig-glow">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="ig-gold-glow">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Logo Outer Glow -->
+    <filter id="ig-outer-glow">
+      <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#ig-bg-gradient)"/>
+
+  <!-- Grid Overlay -->
+  <rect width="1080" height="1080" fill="url(#ig-grid)"/>
+
+  <!-- Decorative Background Elements -->
+  <circle cx="200" cy="200" r="150" fill="#FFB84D" opacity="0.03"/>
+  <circle cx="880" cy="880" r="180" fill="#4A9EFF" opacity="0.03"/>
+  <circle cx="850" cy="230" r="120" fill="#4A9EFF" opacity="0.02"/>
+  <circle cx="230" cy="850" r="100" fill="#FFB84D" opacity="0.02"/>
+
+  <!-- Decorative Corner Elements -->
+  <g transform="translate(100, 100)">
+    <line x1="0" y1="30" x2="0" y2="0" stroke="#FFB84D" stroke-width="4" opacity="0.4" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#FFB84D" stroke-width="4" opacity="0.4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(950, 950)">
+    <line x1="30" y1="0" x2="0" y2="0" stroke="#4A9EFF" stroke-width="4" opacity="0.4" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#4A9EFF" stroke-width="4" opacity="0.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Main Content Container (Centered) -->
+  <g transform="translate(540, 300)">
+    <!-- Lucent Logo (Large, Centered) -->
+    <g transform="translate(-100, 0) scale(2)">
+      <!-- L Shape -->
+      <path d="M 10 10 L 10 90 L 60 90"
+            stroke="#FFFFFF"
+            stroke-width="18"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            filter="url(#ig-outer-glow)"/>
+
+      <!-- C Shape -->
+      <path d="M 90 30 Q 90 10 70 10 Q 50 10 50 30 L 50 70 Q 50 90 70 90 Q 90 90 90 70"
+            stroke="#FFFFFF"
+            stroke-width="18"
+            stroke-linecap="round"
+            fill="none"
+            filter="url(#ig-outer-glow)"/>
+
+      <!-- Center Dot with intense glow -->
+      <circle cx="50" cy="50" r="28" fill="#FFB84D" opacity="0.15"/>
+      <circle cx="50" cy="50" r="20" fill="#FFB84D" opacity="0.3"/>
+      <circle cx="50" cy="50" r="14" fill="#FFB84D" opacity="0.5"/>
+      <circle cx="50" cy="50" r="10" fill="#FFB84D" filter="url(#ig-gold-glow)"/>
+    </g>
+
+    <!-- Brand Name -->
+    <text x="0" y="280" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">
+      Lucent
+    </text>
+
+    <!-- Tagline -->
+    <text x="0" y="355" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="500" fill="#FFB84D" text-anchor="middle">
+      See clearly before you sign
+    </text>
+
+    <!-- Divider Line -->
+    <line x1="-100" y1="395" x2="100" y2="395" stroke="#4A9EFF" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Subtitle -->
+    <text x="0" y="455" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#FFFFFF" text-anchor="middle" opacity="0.85">
+      Transaction Preview &amp; Security
+    </text>
+    <text x="0" y="495" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#FFFFFF" text-anchor="middle" opacity="0.85">
+      for Stacks Blockchain
+    </text>
+  </g>
+
+  <!-- Feature Pills (Bottom) -->
+  <g transform="translate(540, 880)">
+    <!-- Pill 1: Secure -->
+    <g transform="translate(-280, 0)">
+      <rect x="0" y="-25" width="160" height="50" rx="25" fill="rgba(74, 158, 255, 0.2)" stroke="#4A9EFF" stroke-width="2"/>
+      <text x="80" y="8" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+        🔒 Secure
+      </text>
+    </g>
+
+    <!-- Pill 2: Open Source -->
+    <g transform="translate(-80, 0)">
+      <rect x="0" y="-25" width="160" height="50" rx="25" fill="rgba(255, 184, 77, 0.2)" stroke="#FFB84D" stroke-width="2"/>
+      <text x="80" y="8" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+        ⚡ Fast
+      </text>
+    </g>
+
+    <!-- Pill 3: Protected -->
+    <g transform="translate(120, 0)">
+      <rect x="0" y="-25" width="160" height="50" rx="25" fill="rgba(74, 158, 255, 0.2)" stroke="#4A9EFF" stroke-width="2"/>
+      <text x="80" y="8" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+        🛡️ Safe
+      </text>
+    </g>
+  </g>
+
+  <!-- URL/Handle (Bottom) -->
+  <text x="540" y="1000" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" fill="#FFFFFF" text-anchor="middle" opacity="0.7">
+    getlucent.com
+  </text>
+
+  <!-- Ambient Light Effects -->
+  <circle cx="540" cy="340" r="250" fill="#FFB84D" opacity="0.03" filter="url(#ig-glow)"/>
+  <circle cx="540" cy="340" r="180" fill="#4A9EFF" opacity="0.02" filter="url(#ig-glow)"/>
+</svg>

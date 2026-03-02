@@ -1,0 +1,154 @@
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Security Warning Graphic -->
+
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient-sw" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF9F0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF3E0;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="danger-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF5F56;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8A65;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="warning-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFB84D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFC870;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="shadow-card">
+      <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+
+    <filter id="warning-glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="500" fill="url(#bg-gradient-sw)"/>
+
+  <!-- Warning Modal Card -->
+  <rect x="50" y="50" width="500" height="400" rx="16" fill="#FFFFFF" filter="url(#shadow-card)"/>
+
+  <!-- Modal Header -->
+  <rect x="50" y="50" width="500" height="70" rx="16" fill="url(#warning-gradient)"/>
+  <rect x="50" y="105" width="500" height="15" fill="url(#warning-gradient)"/>
+
+  <!-- Warning Icon -->
+  <g transform="translate(275, 65)">
+    <circle cx="0" cy="0" r="25" fill="#FFFFFF" opacity="0.3" filter="url(#warning-glow)"/>
+    <circle cx="0" cy="0" r="20" fill="#FFFFFF"/>
+    <path d="M 0 -10 L 0 5" stroke="#FF5F56" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="10" r="2" fill="#FF5F56"/>
+  </g>
+
+  <!-- Lucent Logo (small) -->
+  <g transform="translate(510, 65)">
+    <g transform="scale(0.15)">
+      <path d="M 8 8 L 8 72 L 48 72"
+            stroke="#FFFFFF"
+            stroke-width="14"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"/>
+      <circle cx="40" cy="40" r="6" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Main Warning Content -->
+  <g id="warning-content" transform="translate(80, 145)">
+    <!-- Warning Badge -->
+    <rect x="0" y="0" width="180" height="32" rx="16" fill="#FF5F56" opacity="0.15"/>
+    <text x="90" y="21" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#FF5F56" text-anchor="middle">
+      ⚠️ CRITICAL WARNING
+    </text>
+
+    <!-- Title -->
+    <text x="0" y="65" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0A0E27">
+      Unlimited Token Approval Detected
+    </text>
+
+    <!-- Explanation -->
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      This transaction requests unlimited access to your tokens.
+    </text>
+    <text x="0" y="120" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      The contract can withdraw any amount at any time without
+    </text>
+    <text x="0" y="140" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      your permission.
+    </text>
+
+    <!-- Risk Comparison -->
+    <g transform="translate(0, 160)">
+      <!-- Dangerous (Left) -->
+      <rect x="0" y="0" width="200" height="100" rx="10" fill="#FFF0F0" stroke="#FF5F56" stroke-width="2"/>
+      <text x="100" y="22" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#FF5F56" text-anchor="middle">
+        DANGEROUS
+      </text>
+      <text x="15" y="45" font-family="JetBrains Mono, monospace" font-size="11" fill="#0A0E27">
+        Amount:
+      </text>
+      <text x="15" y="63" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" fill="#FF5F56">
+        UNLIMITED
+      </text>
+      <text x="15" y="85" font-family="Inter, sans-serif" font-size="10" fill="#999">
+        ✗ Contract can drain
+      </text>
+      <text x="15" y="97" font-family="Inter, sans-serif" font-size="10" fill="#999">
+        your entire balance
+      </text>
+
+      <!-- Safe (Right) -->
+      <rect x="240" y="0" width="200" height="100" rx="10" fill="#F0FFF4" stroke="#27C93F" stroke-width="2"/>
+      <text x="340" y="22" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#27C93F" text-anchor="middle">
+        SAFE
+      </text>
+      <text x="255" y="45" font-family="JetBrains Mono, monospace" font-size="11" fill="#0A0E27">
+        Amount:
+      </text>
+      <text x="255" y="63" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" fill="#27C93F">
+        10.5 STX
+      </text>
+      <text x="255" y="85" font-family="Inter, sans-serif" font-size="10" fill="#999">
+        ✓ Limited to exact
+      </text>
+      <text x="255" y="97" font-family="Inter, sans-serif" font-size="10" fill="#999">
+        amount needed
+      </text>
+    </g>
+  </g>
+
+  <!-- Recommendation Box -->
+  <g transform="translate(80, 355)">
+    <rect x="0" y="0" width="440" height="65" rx="8" fill="#4A9EFF" opacity="0.1"/>
+    <text x="15" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#4A9EFF">
+      💡 Recommendation
+    </text>
+    <text x="15" y="40" font-family="Inter, sans-serif" font-size="12" fill="#0A0E27">
+      Request limited approval instead. Only approve the exact amount
+    </text>
+    <text x="15" y="56" font-family="Inter, sans-serif" font-size="12" fill="#0A0E27">
+      needed for this transaction (recommended: 10.5 STX).
+    </text>
+  </g>
+
+  <!-- Action Buttons -->
+  <g transform="translate(80, 430)">
+    <rect x="0" y="0" width="200" height="44" rx="10" fill="#E0E0E0"/>
+    <text x="100" y="28" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#666" text-anchor="middle">
+      Reject Transaction
+    </text>
+
+    <rect x="220" y="0" width="220" height="44" rx="10" fill="#4A9EFF"/>
+    <text x="330" y="28" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      Set Limited Approval
+    </text>
+  </g>
+</svg>

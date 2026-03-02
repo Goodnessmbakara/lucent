@@ -1,0 +1,160 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- GitHub Social Preview: 1280x640px -->
+
+  <defs>
+    <!-- Dark GitHub Background -->
+    <linearGradient id="gh-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161B22;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Code Pattern Background -->
+    <pattern id="code-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <text x="5" y="15" font-family="monospace" font-size="10" fill="rgba(74, 158, 255, 0.08)">&lt;/&gt;</text>
+      <text x="25" y="45" font-family="monospace" font-size="10" fill="rgba(74, 158, 255, 0.08)">{ }</text>
+    </pattern>
+
+    <!-- Glow Effects -->
+    <filter id="gh-glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="gh-gold-glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Terminal Shadow -->
+    <filter id="terminal-shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#gh-bg-gradient)"/>
+
+  <!-- Code Pattern Overlay -->
+  <rect width="1280" height="640" fill="url(#code-pattern)"/>
+
+  <!-- Decorative Elements -->
+  <circle cx="1150" cy="120" r="100" fill="#4A9EFF" opacity="0.05"/>
+  <circle cx="150" cy="520" r="80" fill="#FFB84D" opacity="0.04"/>
+
+  <!-- Main Content Container -->
+  <g transform="translate(100, 120)">
+    <!-- Logo Section -->
+    <g transform="translate(80, 80) scale(1.2)">
+      <!-- L Shape -->
+      <path d="M 10 10 L 10 90 L 60 90"
+            stroke="#FFFFFF"
+            stroke-width="18"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            filter="url(#gh-glow)"/>
+
+      <!-- C Shape -->
+      <path d="M 90 30 Q 90 10 70 10 Q 50 10 50 30 L 50 70 Q 50 90 70 90 Q 90 90 90 70"
+            stroke="#FFFFFF"
+            stroke-width="18"
+            stroke-linecap="round"
+            fill="none"
+            filter="url(#gh-glow)"/>
+
+      <!-- Center Dot -->
+      <circle cx="50" cy="50" r="20" fill="#FFB84D" opacity="0.2"/>
+      <circle cx="50" cy="50" r="14" fill="#FFB84D" opacity="0.4"/>
+      <circle cx="50" cy="50" r="8" fill="#FFB84D" filter="url(#gh-gold-glow)"/>
+    </g>
+
+    <!-- Text Content -->
+    <g transform="translate(300, 100)">
+      <!-- Brand Name -->
+      <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700" fill="#FFFFFF">
+        Lucent
+      </text>
+
+      <!-- Tagline -->
+      <text x="0" y="55" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500" fill="#FFB84D">
+        Transaction Security for Stacks
+      </text>
+
+      <!-- Description -->
+      <text x="0" y="105" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#FFFFFF" opacity="0.75">
+        See what you're signing before you approve
+      </text>
+    </g>
+
+    <!-- Terminal/Code Block -->
+    <g transform="translate(300, 260)">
+      <rect width="680" height="120" rx="8" fill="#0D1117" stroke="rgba(74, 158, 255, 0.3)" stroke-width="2" filter="url(#terminal-shadow)"/>
+
+      <!-- Terminal Header -->
+      <g transform="translate(0, 0)">
+        <circle cx="20" cy="20" r="6" fill="#FF5F56"/>
+        <circle cx="40" cy="20" r="6" fill="#FFBD2E"/>
+        <circle cx="60" cy="20" r="6" fill="#27C93F"/>
+      </g>
+
+      <!-- Installation Code -->
+      <g transform="translate(25, 55)">
+        <text x="0" y="0" font-family="Monaco, Courier New, monospace" font-size="18" font-weight="400" fill="#7EE787">
+          $ npm install @lucent/sdk
+        </text>
+        <text x="0" y="35" font-family="Monaco, Courier New, monospace" font-size="16" font-weight="400" fill="#8B949E">
+          # or use with any Stacks wallet
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- GitHub Stars Badge -->
+  <g transform="translate(950, 480)">
+    <rect width="260" height="50" rx="25" fill="rgba(74, 158, 255, 0.15)" stroke="#4A9EFF" stroke-width="2"/>
+    <!-- Star Icon -->
+    <path transform="translate(25, 15)" d="M 10 0 L 12 7 L 19 7 L 14 11 L 16 18 L 10 14 L 4 18 L 6 11 L 1 7 L 8 7 Z" fill="#FFB84D"/>
+    <text x="55" y="33" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">
+      Star on GitHub
+    </text>
+  </g>
+
+  <!-- Footer Tags -->
+  <g transform="translate(100, 570)">
+    <!-- Tag 1 -->
+    <rect x="0" y="0" width="130" height="35" rx="17.5" fill="rgba(255, 184, 77, 0.1)" stroke="#FFB84D" stroke-width="1"/>
+    <text x="15" y="23" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#FFB84D">
+      open-source
+    </text>
+
+    <!-- Tag 2 -->
+    <rect x="150" y="0" width="100" height="35" rx="17.5" fill="rgba(74, 158, 255, 0.1)" stroke="#4A9EFF" stroke-width="1"/>
+    <text x="165" y="23" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#4A9EFF">
+      stacks
+    </text>
+
+    <!-- Tag 3 -->
+    <rect x="270" y="0" width="120" height="35" rx="17.5" fill="rgba(74, 158, 255, 0.1)" stroke="#4A9EFF" stroke-width="1"/>
+    <text x="285" y="23" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#4A9EFF">
+      web3-security
+    </text>
+  </g>
+
+  <!-- Decorative Code Brackets -->
+  <text x="40" y="60" font-family="monospace" font-size="32" fill="rgba(74, 158, 255, 0.3)" font-weight="bold">&lt;/&gt;</text>
+  <text x="1180" y="600" font-family="monospace" font-size="32" fill="rgba(255, 184, 77, 0.3)" font-weight="bold">{ }</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon 32x32 - Optimized for small size -->
+
+  <g transform="translate(8, 8)">
+    <!-- L Shape (simplified for small size) -->
+    <path d="M 2 2 L 2 14 L 9 14"
+          stroke="#0A0E27"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+
+    <!-- C Shape -->
+    <path d="M 14 4 Q 14 2 11 2 Q 8 2 8 4 L 8 12 Q 8 14 11 14 Q 14 14 14 12"
+          stroke="#0A0E27"
+          stroke-width="3"
+          stroke-linecap="round"
+          fill="none"/>
+
+    <!-- Center Dot (prominent for visibility) -->
+    <circle cx="8" cy="8" r="2" fill="#FFB84D"/>
+  </g>
+</svg>

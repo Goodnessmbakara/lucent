@@ -1,0 +1,267 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Social Media Profile Mockup -->
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#F5F6F9"/>
+
+  <!-- Twitter/X Card -->
+  <g id="twitter-card" transform="translate(50, 50)">
+    <text font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0A0E27">
+      Twitter / X Profile
+    </text>
+
+    <!-- Profile Card -->
+    <rect y="40" width="520" height="300" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+
+    <!-- Cover Image -->
+    <defs>
+      <linearGradient id="cover-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#0A0E27;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#1A1F3A;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect y="40" width="520" height="120" rx="16" fill="url(#cover-gradient)"/>
+    <rect y="40" width="520" height="120" fill="rgba(255,184,77,0.05)"/>
+
+    <!-- Profile Picture -->
+    <rect x="30" y="110" width="100" height="100" rx="50" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="4"/>
+    <rect x="35" y="115" width="90" height="90" rx="45" fill="#0A0E27"/>
+
+    <!-- Logo in Profile Pic -->
+    <g transform="translate(55, 135)">
+      <g transform="scale(0.45)">
+        <path d="M 8 8 L 8 72 L 48 72"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"/>
+        <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              fill="none"/>
+        <circle cx="40" cy="40" r="6" fill="#FFB84D"/>
+        <circle cx="40" cy="40" r="10" fill="#FFB84D" opacity="0.3"/>
+      </g>
+    </g>
+
+    <!-- Profile Info -->
+    <text x="30" y="240" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0A0E27">
+      Lucent
+    </text>
+    <text x="100" y="240" font-family="Inter, sans-serif" font-size="16" fill="#999">
+      @getlucent
+    </text>
+
+    <text x="30" y="270" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      Transaction preview & security for Stacks
+    </text>
+    <text x="30" y="290" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      See clearly before you sign ⚡
+    </text>
+
+    <text x="30" y="320" font-family="Inter, sans-serif" font-size="13" fill="#4A9EFF">
+      🔗 getlucent.com
+    </text>
+  </g>
+
+  <!-- LinkedIn Card -->
+  <g id="linkedin-card" transform="translate(630, 50)">
+    <text font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0A0E27">
+      LinkedIn Profile
+    </text>
+
+    <!-- Profile Card -->
+    <rect y="40" width="520" height="350" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+
+    <!-- Cover -->
+    <rect y="40" width="520" height="100" rx="16" fill="url(#cover-gradient)"/>
+
+    <!-- Profile Picture -->
+    <rect x="30" y="90" width="100" height="100" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="4"/>
+    <rect x="35" y="95" width="90" height="90" rx="6" fill="#0A0E27"/>
+
+    <!-- Logo in Profile -->
+    <g transform="translate(55, 115)">
+      <g transform="scale(0.45)">
+        <path d="M 8 8 L 8 72 L 48 72"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"/>
+        <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              fill="none"/>
+        <circle cx="40" cy="40" r="6" fill="#FFB84D"/>
+      </g>
+    </g>
+
+    <!-- Company Info -->
+    <text x="30" y="230" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0A0E27">
+      Lucent
+    </text>
+
+    <text x="30" y="260" font-family="Inter, sans-serif" font-size="15" fill="#666">
+      Security Infrastructure for Stacks
+    </text>
+
+    <text x="30" y="290" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      Transaction preview platform helping users sign with
+    </text>
+    <text x="30" y="310" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      confidence. Built for the Stacks ecosystem.
+    </text>
+
+    <rect x="30" y="330" width="120" height="36" rx="18" fill="#0A66C2"/>
+    <text x="53" y="352" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+      + Follow
+    </text>
+  </g>
+
+  <!-- GitHub Preview -->
+  <g id="github-card" transform="translate(50, 450)">
+    <text font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0A0E27">
+      GitHub Repository
+    </text>
+
+    <!-- Repo Card -->
+    <rect y="40" width="520" height="250" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+
+    <!-- Repo Header -->
+    <g transform="translate(30, 70)">
+      <!-- Mini Logo -->
+      <rect width="50" height="50" rx="8" fill="#0A0E27"/>
+      <g transform="translate(10, 10) scale(0.3)">
+        <path d="M 8 8 L 8 72 L 48 72"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"/>
+        <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              fill="none"/>
+        <circle cx="40" cy="40" r="6" fill="#FFB84D"/>
+      </g>
+
+      <text x="70" y="20" font-family="monospace" font-size="18" font-weight="600" fill="#0A66C2">
+        lucent-labs/lucent
+      </text>
+      <text x="70" y="42" font-family="Inter, sans-serif" font-size="13" fill="#666">
+        Transaction preview & security for Stacks
+      </text>
+    </g>
+
+    <!-- Repo Stats -->
+    <g transform="translate(30, 150)">
+      <rect width="80" height="28" rx="14" fill="#F6F8FA" stroke="#D0D7DE" stroke-width="1"/>
+      <text x="12" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#24292F">
+        ⭐ 247
+      </text>
+
+      <rect x="100" width="80" height="28" rx="14" fill="#F6F8FA" stroke="#D0D7DE" stroke-width="1"/>
+      <text x="112" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#24292F">
+        🔱 45
+      </text>
+
+      <rect x="200" width="100" height="28" rx="14" fill="#F6F8FA" stroke="#D0D7DE" stroke-width="1"/>
+      <circle cx="215" cy="14" r="6" fill="#FFB84D"/>
+      <text x="228" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#24292F">
+        TypeScript
+      </text>
+    </g>
+
+    <!-- Topics -->
+    <g transform="translate(30, 200)">
+      <rect width="70" height="24" rx="12" fill="#DFF6DD" stroke="#1A7F37" stroke-width="1"/>
+      <text x="10" y="16" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1A7F37">
+        stacks
+      </text>
+
+      <rect x="80" width="80" height="24" rx="12" fill="#DFF6DD" stroke="#1A7F37" stroke-width="1"/>
+      <text x="90" y="16" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1A7F37">
+        security
+      </text>
+
+      <rect x="170" width="100" height="24" rx="12" fill="#DFF6DD" stroke="#1A7F37" stroke-width="1"/>
+      <text x="180" y="16" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1A7F37">
+        blockchain
+      </text>
+    </g>
+  </g>
+
+  <!-- App Store Card -->
+  <g id="app-store-card" transform="translate(630, 450)">
+    <text font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0A0E27">
+      App Store / Chrome Web Store
+    </text>
+
+    <!-- Store Card -->
+    <rect y="40" width="520" height="250" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+
+    <!-- App Icon -->
+    <g transform="translate(30, 70)">
+      <rect width="90" height="90" rx="20" fill="#0A0E27"/>
+      <g transform="translate(18, 18) scale(0.55)">
+        <path d="M 8 8 L 8 72 L 48 72"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"/>
+        <path d="M 72 24 Q 72 8 56 8 Q 40 8 40 24 L 40 56 Q 40 72 56 72 Q 72 72 72 56"
+              stroke="#FFFFFF"
+              stroke-width="14"
+              stroke-linecap="round"
+              fill="none"/>
+        <circle cx="40" cy="40" r="6" fill="#FFB84D"/>
+        <circle cx="40" cy="40" r="10" fill="#FFB84D" opacity="0.3"/>
+      </g>
+    </g>
+
+    <!-- App Info -->
+    <g transform="translate(140, 70)">
+      <text font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#0A0E27">
+        Lucent
+      </text>
+      <text y="25" font-family="Inter, sans-serif" font-size="13" fill="#666">
+        Transaction Preview for Stacks
+      </text>
+
+      <!-- Rating -->
+      <text y="50" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0A0E27">
+        ⭐ 4.8
+      </text>
+      <text x="60" y="50" font-family="Inter, sans-serif" font-size="13" fill="#999">
+        (1,234 reviews)
+      </text>
+
+      <!-- Category -->
+      <text y="75" font-family="Inter, sans-serif" font-size="13" fill="#666">
+        #3 in Finance
+      </text>
+    </g>
+
+    <!-- Download Button -->
+    <rect x="30" y="190" width="460" height="50" rx="25" fill="#FFB84D"/>
+    <text x="180" y="220" font-family="Inter, sans-serif" font-size="17" font-weight="600" fill="#0A0E27">
+      Add to Chrome – It's Free
+    </text>
+  </g>
+
+  <!-- Label -->
+  <g transform="translate(50, 820)">
+    <text font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#0A0E27">
+      Social Media & Platform Presence
+    </text>
+    <text y="35" font-family="Inter, sans-serif" font-size="14" fill="#666">
+      Consistent branding across all channels with the monogram-minimal logo
+    </text>
+  </g>
+</svg>
