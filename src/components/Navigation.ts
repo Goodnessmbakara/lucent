@@ -7,9 +7,20 @@ export function createNavigation(): HTMLElement {
     left: 0;
     right: 0;
     z-index: var(--z-sticky);
+    background: transparent;
+    padding: var(--space-4) var(--space-6);
+  `;
+
+  // Enclosure wrapper
+  const enclosure = document.createElement('div');
+  enclosure.style.cssText = `
+    max-width: 1400px;
+    margin: 0 auto;
     background: rgba(10, 14, 39, 0.95);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 184, 77, 0.1);
+    border: 1px solid rgba(255, 184, 77, 0.1);
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   `;
 
   const container = document.createElement('div');
@@ -18,7 +29,7 @@ export function createNavigation(): HTMLElement {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 72px;
     max-width: 1400px;
     padding: 0 var(--space-6);
   `;
@@ -127,7 +138,8 @@ export function createNavigation(): HTMLElement {
 
   container.appendChild(logoLink);
   container.appendChild(navLinks);
-  nav.appendChild(container);
+  enclosure.appendChild(container);
+  nav.appendChild(enclosure);
 
   return nav;
 }

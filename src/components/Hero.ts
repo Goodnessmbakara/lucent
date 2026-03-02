@@ -152,9 +152,15 @@ export function createHero(): HTMLElement {
     primaryButton.style.boxShadow = '0 8px 24px rgba(255, 184, 77, 0.3)';
   };
 
-  const secondaryButton = document.createElement('button');
+  const secondaryButton = document.createElement('a');
   secondaryButton.textContent = 'View on GitHub';
+  secondaryButton.href = 'https://github.com/Goodnessmbakara/lucent';
+  secondaryButton.target = '_blank';
+  secondaryButton.rel = 'noopener noreferrer';
   secondaryButton.style.cssText = `
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: var(--space-3) var(--space-6);
     background: transparent;
     color: var(--color-text-primary);
@@ -163,6 +169,7 @@ export function createHero(): HTMLElement {
     border: 2px solid var(--color-border);
     border-radius: var(--radius-xl);
     cursor: pointer;
+    text-decoration: none;
     transition: all var(--transition-base);
   `;
   secondaryButton.onmouseenter = () => {
