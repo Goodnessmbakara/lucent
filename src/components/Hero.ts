@@ -7,6 +7,34 @@ export function createHero(): HTMLElement {
     overflow: hidden;
   `;
 
+  // Browser Extension as Background
+  const backgroundContainer = document.createElement('div');
+  backgroundContainer.style.cssText = `
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1400px;
+    height: 90%;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  `;
+
+  const backgroundImage = document.createElement('img');
+  backgroundImage.src = '/mockups/browser-extension.svg';
+  backgroundImage.alt = '';
+  backgroundImage.style.cssText = `
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  `;
+
+  backgroundContainer.appendChild(backgroundImage);
+  hero.appendChild(backgroundContainer);
+
   // Gradient background overlay
   const gradientOverlay = document.createElement('div');
   gradientOverlay.style.cssText = `
@@ -21,6 +49,7 @@ export function createHero(): HTMLElement {
       transparent 50%
     );
     pointer-events: none;
+    z-index: 0;
   `;
   hero.appendChild(gradientOverlay);
 
@@ -37,6 +66,7 @@ export function createHero(): HTMLElement {
       linear-gradient(90deg, rgba(255, 184, 77, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
+    z-index: 0;
   `;
   hero.appendChild(gridPattern);
 
