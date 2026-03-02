@@ -180,6 +180,27 @@ export function createFeatures(): HTMLElement {
 
   container.appendChild(header);
   container.appendChild(grid);
+
+  // Feature Showcase Visual
+  const showcaseVisual = document.createElement('div');
+  showcaseVisual.style.cssText = `
+    margin-top: var(--space-12);
+    text-align: center;
+  `;
+
+  const showcaseImage = document.createElement('img');
+  showcaseImage.src = '/assets/hero/feature-showcase.svg';
+  showcaseImage.alt = 'Lucent Features Showcase';
+  showcaseImage.style.cssText = `
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: var(--radius-2xl);
+  `;
+
+  showcaseVisual.appendChild(showcaseImage);
+  container.appendChild(showcaseVisual);
+
   section.appendChild(container);
 
   return section;
