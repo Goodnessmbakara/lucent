@@ -7,6 +7,7 @@ export function createFooter(): HTMLElement {
 
   // Create 3 horizontal steps container
   const stepsContainer = document.createElement('div');
+  stepsContainer.className = 'footer-steps';
   stepsContainer.style.cssText = `
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -14,8 +15,30 @@ export function createFooter(): HTMLElement {
     min-height: 400px;
   `;
 
+  // Add responsive styles
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (max-width: 768px) {
+      .footer-steps {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+      }
+      .footer-step {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 184, 77, 0.1) !important;
+        padding: var(--space-8) var(--space-4) !important;
+        min-height: 280px;
+      }
+      .footer-step:last-child {
+        border-bottom: none !important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
   // STEP 1: Brand & Tagline (darkest)
   const step1 = document.createElement('div');
+  step1.className = 'footer-step';
   step1.style.cssText = `
     background: var(--color-navy);
     padding: var(--space-12) var(--space-6);
@@ -81,6 +104,7 @@ export function createFooter(): HTMLElement {
 
   // STEP 2: Navigation (medium)
   const step2 = document.createElement('div');
+  step2.className = 'footer-step';
   step2.style.cssText = `
     background: var(--color-surface);
     padding: var(--space-12) var(--space-6);
@@ -148,6 +172,7 @@ export function createFooter(): HTMLElement {
 
   // STEP 3: Connect (lightest)
   const step3 = document.createElement('div');
+  step3.className = 'footer-step';
   step3.style.cssText = `
     background: var(--color-surface-hover);
     padding: var(--space-12) var(--space-6);
