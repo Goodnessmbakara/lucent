@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucent Transaction Preview - Interactive Demo</title>
+  <link rel="icon" href="/logos/lucent/icon-dark.svg" type="image/svg+xml">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0A0E27;
+      color: #FFFFFF;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* Header with branding */
+    .page-header {
+      background: linear-gradient(135deg, #0A0E27 0%, #131728 100%);
+      border-bottom: 1px solid rgba(255, 184, 77, 0.1);
+      padding: 24px 40px;
+    }
+
+    .brand-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    .brand-info h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-info p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .brand-badge {
+      display: inline-block;
+      background: rgba(255, 184, 77, 0.1);
+      border: 1px solid rgba(255, 184, 77, 0.3);
+      color: #FFB84D;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-left: auto;
+    }
+
+    /* Main content area */
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Left side - Information */
+    .info-section {
+      padding-top: 20px;
+    }
+
+    .info-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .info-section .subtitle {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .feature-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #FFB84D;
+    }
+
+    .feature-content p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.5;
+    }
+
+    .demo-disclaimer {
+      background: rgba(74, 158, 255, 0.1);
+      border: 1px solid rgba(74, 158, 255, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 32px;
+    }
+
+    .demo-disclaimer h4 {
+      font-size: 14px;
+      color: #4A9EFF;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .demo-disclaimer p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+    }
+
+    /* Right side - Extension popup */
+    .extension-popup {
+      background: #131728;
+      border-radius: 20px;
+      box-shadow:
+        0 0 0 1px rgba(255, 184, 77, 0.15),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(255, 184, 77, 0.08);
+      overflow: hidden;
+      position: sticky;
+      top: 40px;
+    }
+
+    .popup-header {
+      background: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 184, 77, 0.1);
+    }
+
+    .popup-logo {
+      width: 36px;
+      height: 36px;
+    }
+
+    .popup-header h2 {
+      font-size: 18px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .popup-content {
+      padding: 28px 24px;
+    }
+
+    .warning-banner {
+      background: rgba(255, 184, 77, 0.08);
+      border: 1.5px solid rgba(255, 184, 77, 0.4);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .warning-icon {
+      color: #FFB84D;
+      font-size: 22px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .warning-text h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #FFB84D;
+    }
+
+    .warning-text p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+    }
+
+    .transaction-details {
+      background: #1A1F3A;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .detail-row:first-child {
+      padding-top: 0;
+    }
+
+    .detail-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      color: #FFFFFF;
+      font-weight: 500;
+      text-align: right;
+      max-width: 60%;
+      word-break: break-all;
+    }
+
+    .detail-value.address {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 11px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .detail-value.amount {
+      color: #FFB84D;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .contract-info {
+      background: rgba(74, 158, 255, 0.08);
+      border: 1px solid rgba(74, 158, 255, 0.25);
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 18px;
+    }
+
+    .contract-info h4 {
+      font-size: 12px;
+      color: #4A9EFF;
+      margin-bottom: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contract-info .function-call {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.85);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 12px;
+      border-radius: 6px;
+      line-height: 1.6;
+    }
+
+    .security-check {
+      background: rgba(76, 175, 80, 0.08);
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .check-icon {
+      color: #4CAF50;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .check-text {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
+    .check-text strong {
+      color: #4CAF50;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+    }
+
+    .btn-reject {
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.7);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-reject:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-reject:active {
+      transform: scale(0.98);
+    }
+
+    .btn-approve {
+      background: #FFB84D;
+      color: #0A0E27;
+      border: 1.5px solid transparent;
+    }
+
+    .btn-approve:hover {
+      background: #FFC970;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 184, 77, 0.3);
+    }
+
+    .btn-approve:active {
+      transform: translateY(0);
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      top: 32px;
+      right: 32px;
+      background: #4CAF50;
+      color: white;
+      padding: 18px 28px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      display: none;
+      animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 500;
+      font-size: 14px;
+      z-index: 1000;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .extension-popup {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+      }
+
+      .extension-popup {
+        position: relative;
+        top: 0;
+      }
+
+      .page-header {
+        padding: 20px;
+      }
+
+      .brand-badge {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+
+      .info-section h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="brand-container">
+      <img src="/logos/lucent/icon-dark.svg" alt="Lucent" class="brand-logo">
+      <div class="brand-info">
+        <h1>Lucent</h1>
+        <p>Transaction Preview Demo</p>
+      </div>
+      <span class="brand-badge">Interactive Mockup</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    <!-- Left: Information -->
+    <div class="info-section">
+      <h2>See Exactly What You're Signing</h2>
+      <p class="subtitle">
+        Lucent decodes complex Stacks transactions into clear, human-readable previews
+        before you sign—protecting you from scams and mistakes.
+      </p>
+
+      <ul class="feature-list">
+        <li class="feature-item">
+          <span class="feature-icon">🔍</span>
+          <div class="feature-content">
+            <h3>Decoded Transaction Details</h3>
+            <p>See amounts, recipients, contract calls, and fees in plain language—no more blind signing.</p>
+          </div>
+        </li>
+
+        <li class="feature-item">
+          <span class="feature-icon">⚠️</span>
+          <div class="feature-content">
+            <h3>Smart Security Warnings</h3>
+            <p>Get alerted to high-value transactions, unverified contracts, and suspicious patterns.</p>
+          </div>
+        </li>
+
+        <li class="feature-item">
+          <span class="feature-icon">✅</span>
+          <div class="feature-content">
+            <h3>Contract Verification</h3>
+            <p>Know if you're interacting with trusted, verified contracts before approving.</p>
+          </div>
+        </li>
+
+        <li class="feature-item">
+          <span class="feature-icon">🔗</span>
+          <div class="feature-content">
+            <h3>Works With Your Wallet</h3>
+            <p>Seamlessly integrates with Leather and Xverse—no wallet modifications needed.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="demo-disclaimer">
+        <h4>📋 About This Demo</h4>
+        <p>
+          This is an <strong>interactive visual mockup</strong> demonstrating Lucent's planned UX.
+          The functional extension with real transaction parsing, wallet integration, and security
+          detection will be built as part of the Stacks Endowment Getting Started Program Track.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Extension Popup -->
+    <div class="extension-popup">
+      <div class="popup-header">
+        <img src="/logos/lucent/icon-dark.svg" alt="Lucent" class="popup-logo">
+        <h2>Review Transaction</h2>
+      </div>
+
+      <div class="popup-content">
+        <!-- Warning Banner -->
+        <div class="warning-banner">
+          <div class="warning-icon">⚠️</div>
+          <div class="warning-text">
+            <h3>High Value Transaction</h3>
+            <p>You're about to transfer a significant amount. Please verify all details carefully.</p>
+          </div>
+        </div>
+
+        <!-- Transaction Details -->
+        <div class="transaction-details">
+          <div class="detail-row">
+            <span class="detail-label">Type</span>
+            <span class="detail-value">STX Transfer</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Amount</span>
+            <span class="detail-value amount">50.00 STX</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">To</span>
+            <span class="detail-value address">SP2J6ZY48GV1E...Z8JF5NQXQ</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Network Fee</span>
+            <span class="detail-value">0.002 STX</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Memo</span>
+            <span class="detail-value">Payment for services</span>
+          </div>
+
+          <!-- Contract Info -->
+          <div class="contract-info">
+            <h4>Contract Interaction</h4>
+            <div class="function-call">contract: SP3FBR2AGK5H9Q...
+function: transfer()
+args: [recipient, amount, memo]</div>
+          </div>
+        </div>
+
+        <!-- Security Check -->
+        <div class="security-check">
+          <div class="check-icon">✓</div>
+          <div class="check-text">
+            <strong>Contract Verified</strong> — This contract has been verified and appears safe
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="btn btn-reject" onclick="handleReject()">Reject</button>
+          <button class="btn btn-approve" onclick="handleApprove()">Approve & Sign</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    function showToast(message, color = '#4CAF50') {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.background = color;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+
+    function handleReject() {
+      showToast('❌ Transaction rejected', '#f44336');
+    }
+
+    function handleApprove() {
+      showToast('✓ Transaction approved — Sending to wallet...', '#4CAF50');
+    }
+  </script>
+</body>
+</html>
